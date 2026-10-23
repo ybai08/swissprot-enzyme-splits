@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fair Enzyme Splits</title>
+<meta name="description" content="Building leakage-free train/validation/test splits for Swiss-Prot enzymes with MMseqs2, Foldseek and Folddisco.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --surface-2: #f2f1ed;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --train: #2a78d6;
+  --val: #eb6834;
+  --test: #1baf7a;
+  --leak: #d03b3b;
+  --link: rgba(11, 11, 11, 0.16);
+  --accent: #2a78d6;
+  --code-bg: #f2f1ed;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --surface-2: #222220;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --train: #3987e5;
+    --val: #d95926;
+    --test: #199e70;
+    --leak: #e66767;
+    --link: rgba(255, 255, 255, 0.18);
+    --accent: #3987e5;
+    --code-bg: #222220;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-2: #222220;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.10);
+  --train: #3987e5;
+  --val: #d95926;
+  --test: #199e70;
+  --leak: #e66767;
+  --link: rgba(255, 255, 255, 0.18);
+  --accent: #3987e5;
+  --code-bg: #222220;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--code-bg); padding: 14px 16px; border-radius: 8px; overflow-x: auto; line-height: 1.5; margin: 0; }
+pre code { background: none; padding: 0; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+nav.top {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--page) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+nav.top .wrap { display: flex; align-items: center; gap: 20px; height: 52px; }
+nav.top .brand { font-weight: 650; color: var(--ink); text-decoration: none; white-space: nowrap; }
+nav.top .links { display: flex; gap: 16px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+nav.top .links a { color: var(--ink-2); text-decoration: none; font-size: 14px; white-space: nowrap; }
+nav.top .links a:hover { color: var(--ink); }
+nav.top .gh { font-size: 14px; white-space: nowrap; }
+
+section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: none; }
+h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; font-weight: 700; }
+h2 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+.kicker { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 8px; }
+.lede { color: var(--ink-2); font-size: 18px; max-width: 680px; margin: 0 0 28px; }
+.sub { color: var(--ink-2); max-width: 720px; margin: 0 0 28px; }
+.muted { color: var(--muted); }
+
+/* hero */
+.hero { padding: 64px 0 56px; }
+.hero-figs { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin: 8px 0 32px; }
+.fig { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; min-width: 210px; }
+.fig .num { font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.fig .lab { color: var(--ink-2); font-size: 14px; margin-top: 8px; max-width: 220px; }
+.fig.bad .num { color: var(--leak); }
+.arrow-big { font-size: 28px; color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stat { border-top: 2px solid var(--grid); padding-top: 10px; }
+.stat b { display: block; font-size: 22px; }
+.stat span { color: var(--ink-2); font-size: 14px; }
+
+/* cards */
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.card p { margin: 0; color: var(--ink-2); font-size: 15px; }
+.card .tool { display: inline-block; font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--surface-2); border-radius: 999px; padding: 2px 9px; margin-bottom: 10px; }
+.card svg.icon { display: block; width: 100%; height: 64px; margin-bottom: 12px; }
+.card .found { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 14px; color: var(--ink); }
+
+/* toy diagram */
+.toy { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.toy svg { width: 100%; height: auto; display: block; }
+.toy h3 { margin-bottom: 2px; }
+.toy .verdict { font-size: 14px; color: var(--ink-2); margin: 0 0 8px; }
+
+/* pipeline */
+.pipe { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: step; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; position: relative; }
+.step::before { counter-increment: step; content: counter(step); position: absolute; top: 14px; right: 16px; color: var(--muted); font-weight: 650; font-size: 13px; }
+.step .big { font-size: 26px; font-weight: 700; line-height: 1.1; margin: 4px 0 2px; }
+.step .what { font-size: 14px; color: var(--ink-2); }
+.step .tool { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* explorer */
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-bottom: 14px; }
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap; }
+.seg button {
+  font: inherit; font-size: 14px; border: 0; background: transparent; color: var(--ink-2);
+  padding: 6px 12px; border-radius: 8px; cursor: pointer;
+}
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: 0 0 0 1px var(--border); }
+.seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.explorer { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.explain { color: var(--ink-2); font-size: 15px; margin: 0 0 12px; min-height: 48px; }
+.readout { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 8px; }
+.readout div { font-size: 14px; color: var(--ink-2); }
+.readout b { display: block; font-size: 28px; color: var(--ink); line-height: 1.15; }
+.readout b.bad { color: var(--leak); }
+#net { width: 100%; display: block; touch-action: manipulation; }
+#net .zone { fill: none; stroke: var(--grid); stroke-width: 1; }
+#net .zone-label { font-size: 13px; font-weight: 600; fill: var(--ink-2); }
+#net .zone-count { font-size: 12px; fill: var(--muted); }
+#net line { stroke: var(--link); stroke-width: 1; }
+#net line.leak { stroke: var(--leak); stroke-width: 2; }
+#net line.partial { stroke: var(--muted); stroke-dasharray: 4 3; }
+#net line.dim { opacity: 0.15; }
+#net line.hl { stroke: var(--ink); stroke-width: 1.5; opacity: 1; }
+#net line.leak.hl { stroke: var(--leak); stroke-width: 2.5; }
+#net circle.node { stroke: var(--surface); stroke-width: 1.5; }
+#net circle.node.leaked { stroke: var(--leak); stroke-width: 2.5; }
+#net circle.node.dim { opacity: 0.2; }
+#net circle.node.hl { stroke: var(--ink); stroke-width: 2; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--ink-2); margin-top: 10px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.legend i.ring { background: transparent; border: 2.5px solid var(--leak); width: 12px; height: 12px; }
+.legend i.ln { width: 18px; height: 0; border-radius: 0; border-top: 1px solid var(--muted); }
+.legend i.ln.red { border-top: 2px solid var(--leak); }
+.legend i.ln.dash { border-top: 1.5px dashed var(--muted); }
+.leaks { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+.leaks h3 { font-size: 15px; }
+.leaks ul { margin: 6px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-2); columns: 2; column-gap: 24px; }
+.leaks li { break-inside: avoid; padding: 3px 0; }
+.leaks li b { color: var(--ink); font-weight: 600; }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 0 6px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); margin-left: 4px; }
+
+.tip {
+  position: fixed; pointer-events: none; z-index: 20; max-width: 280px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-radius: 10px; padding: 10px 12px; font-size: 13px; line-height: 1.45;
+  opacity: 0; transition: opacity 0.08s;
+}
+.tip .t-name { font-weight: 650; font-size: 14px; }
+.tip .t-row { color: var(--ink-2); }
+.tip .t-row b { color: var(--ink); font-weight: 600; }
+.tip .t-leak { color: var(--leak); font-weight: 600; margin-top: 4px; }
+
+/* charts */
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.chart-card h3 { margin-bottom: 2px; }
+.chart-card .note { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.chart svg { width: 100%; display: block; overflow: visible; }
+.chart .grid line { stroke: var(--grid); }
+.chart .axis text, .chart .cat { font-size: 12px; fill: var(--ink-2); }
+.chart .val { font-size: 12px; fill: var(--ink); font-weight: 600; }
+.chart .bar { fill: var(--train); }
+.chart .bar.other { fill: color-mix(in srgb, var(--train) 40%, var(--surface)); }
+.chart .bar:hover, .chart .bar.focus { filter: brightness(1.12); }
+.multiples { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+details { margin-top: 14px; }
+summary { cursor: pointer; color: var(--accent); font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; margin-top: 10px; }
+th, td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--ink-2); font-weight: 600; font-size: 13px; }
+.table-scroll { overflow-x: auto; }
+
+.findings .card h3 { font-size: 16px; }
+.ml-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.ml-list .card h3 { font-size: 15px; }
+ul.plain { margin: 0; padding-left: 18px; color: var(--ink-2); }
+ul.plain li { margin: 6px 0; }
+.run-steps { display: grid; gap: 10px; }
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 860px) {
+  .grid-4, .pipe, .multiples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  section { padding: 40px 0; }
+  .grid-4, .pipe, .grid-2, .ml-list, .multiples { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fig { min-width: 0; flex: 1 1 140px; }
+  .fig .num { font-size: 40px; }
+  .arrow-big { display: none; }
+  .leaks ul { columns: 1; }
+  nav.top .gh { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Fair Enzyme Splits</a>
+    <div class="links">
+      <a href="#problem">Problem</a>
+      <a href="#relatives">Relatives</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#explore">Explore</a>
+      <a href="#results">Results</a>
+      <a href="#ml">For the model</a>
+      <a href="#limits">Limits</a>
+      <a href="#run">Run it</a>
+    </div>
+    <a class="gh" href="https://github.com/ybai08/swissprot-enzyme-splits">GitHub</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="kicker">Swiss-Prot · MMseqs2 · Foldseek · Folddisco</p>
+    <h1>A fair exam for enzyme models</h1>
+    <p class="lede">Before training a model on enzymes, you have to split them into training, validation and test sets. If test enzymes are secret relatives of training enzymes, the model can ace the test by memorizing. This project builds a split where that can't happen, and measures how well it worked.</p>
+    <div class="hero-figs">
+      <div class="fig bad"><div class="num">46%</div><div class="lab">of test enzymes have a relative in training with a <b>random</b> split</div></div>
+      <div class="arrow-big" aria-hidden="true">→</div>
+      <div class="fig"><div class="num">6%</div><div class="lab">with the <b>combined</b> group split built here</div></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>300</b><span>reviewed enzymes sampled</span></div>
+      <div class="stat"><b>298</b><span>AlphaFold structures</span></div>
+      <div class="stat"><b>3</b><span>kinds of similarity checked</span></div>
+      <div class="stat"><b>240 / 30 / 30</b><span>train / val / test</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <p class="kicker">The problem</p>
+    <h2>Proteins come in families</h2>
+    <p class="sub">Most ML assumes each example is independent. Proteins aren't: they have relatives. A random split scatters each family across train and test, so the test is full of cousins of what the model already saw. The fix is to keep each family together on one side.</p>
+    <div class="grid-2">
+      <div class="toy">
+        <h3>Random split</h3>
+        <p class="verdict">Families are split up. Red links are relatives that cross into the test set.</p>
+        <svg id="toy-random" viewBox="0 0 420 220" role="img" aria-label="Diagram: random split puts relatives on both sides"></svg>
+      </div>
+      <div class="toy">
+        <h3>Group split</h3>
+        <p class="verdict">Each family stays on one side. No links cross, so the test is a real test.</p>
+        <svg id="toy-group" viewBox="0 0 420 220" role="img" aria-label="Diagram: group split keeps each family on one side"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="relatives">
+  <div class="wrap">
+    <p class="kicker">What counts as a relative</p>
+    <h2>Four ways two enzymes can be secretly alike</h2>
+    <p class="sub">Each kind is harder to see than the last, and each needs its own tool. The active site matters most: the model will be learning about active sites, so a shared active site is the most direct way to see the answer in advance.</p>
+    <div class="grid-4">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 200 64" aria-hidden="true">
+          <text x="10" y="26" font-family="ui-monospace,monospace" font-size="15" fill="currentColor">MKPSVILYKA</text>
+          <text x="10" y="50" font-family="ui-monospace,monospace" font-size="15" fill="currentColor">MKPSVILYKA</text>
+        </svg>
+        <span class="tool">MMseqs2 (90%)</span>
+        <h3>Identical</h3>
+        <p>The same protein shows up twice.</p>
+        <div class="found">None in this sample: all 300 sit alone at 90% identity.</div>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 200 64" aria-hidden="true">
+          <text x="10" y="26" font-family="ui-monospace,monospace" font-size="15" fill="currentColor">MKPSVILYKA</text>
+          <text x="10" y="50" font-family="ui-monospace,monospace" font-size="15" fill="currentColor">M<tspan fill="var(--muted)">R</tspan>PS<tspan fill="var(--muted)">L</tspan>IL<tspan fill="var(--muted)">F</tspan>K<tspan fill="var(--muted)">S</tspan></text>
+        </svg>
+        <span class="tool">MMseqs2 (30%)</span>
+        <h3>Similar sequence</h3>
+        <p>The amino-acid "spelling" mostly matches, like one enzyme in two species.</p>
+        <div class="found">266 sequence groups; small ortholog sets with the same EC number.</div>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 200 64" aria-hidden="true" fill="none" stroke-width="3" stroke-linecap="round">
+          <path d="M10 44 C30 4, 50 4, 60 34 S90 60, 100 24" stroke="currentColor"/>
+          <path d="M106 46 C126 8, 146 6, 156 36 S184 58, 192 22" stroke="var(--muted)"/>
+        </svg>
+        <span class="tool">Foldseek</span>
+        <h3>Similar 3D shape</h3>
+        <p>Different spelling, but the chain folds into the same shape.</p>
+        <div class="found">Linked 91–110 proteins that sequence kept apart.</div>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 200 64" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round">
+          <path d="M8 50 C28 10, 60 60, 88 20" stroke="var(--muted)"/>
+          <path d="M112 14 C130 60, 170 0, 192 46" stroke="var(--muted)"/>
+          <g fill="var(--leak)" stroke="none"><circle cx="40" cy="30" r="5"/><circle cx="56" cy="40" r="5"/><circle cx="50" cy="22" r="5"/>
+          <circle cx="146" cy="30" r="5"/><circle cx="162" cy="40" r="5"/><circle cx="156" cy="22" r="5"/></g>
+        </svg>
+        <span class="tool">Folddisco</span>
+        <h3>Similar active site</h3>
+        <p>Different overall shape, but the few catalytic residues sit in the same 3D arrangement.</p>
+        <div class="found">Zinc proteases (HExxH) matched across 4 different folds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="wrap">
+    <p class="kicker">What the project does</p>
+    <h2>From 266,683 enzymes to one fair split</h2>
+    <p class="sub">Every step is one script in <code>scripts/</code>. Each tool produces groups. The groups are merged, and whole groups are dealt into train, val and test.</p>
+    <div class="pipe">
+      <div class="step"><div class="tool">UniProt</div><div class="big">300</div><div class="what">random reviewed enzymes with EC numbers, from 266,683 matches</div></div>
+      <div class="step"><div class="tool">MMseqs2</div><div class="big">266</div><div class="what">sequence groups at 30% identity</div></div>
+      <div class="step"><div class="tool">AlphaFold DB</div><div class="big">298</div><div class="what">predicted structures, median confidence 94</div></div>
+      <div class="step"><div class="tool">Foldseek</div><div class="big">200</div><div class="what">shape groups (TM-score above 0.5)</div></div>
+      <div class="step"><div class="tool">Folddisco</div><div class="big">74 → 7</div><div class="what">active-site motifs searched, groups of shared sites found</div></div>
+      <div class="step"><div class="tool">Merge</div><div class="big">195</div><div class="what">combined groups: relatives by any measure stay together</div></div>
+      <div class="step"><div class="tool">Split</div><div class="big">240/30/30</div><div class="what">whole groups dealt out, biggest first, to hit 80/10/10</div></div>
+      <div class="step"><div class="tool">Audit</div><div class="big">6%</div><div class="what">test enzymes still with a relative in train, by independent searches</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <p class="kicker">Explore</p>
+    <h2>Watch the leaks disappear</h2>
+    <p class="sub">Every dot is one of the 300 enzymes, placed in the split it gets assigned to. Lines connect relatives found by the audit searches. A <span style="color:var(--leak);font-weight:600">red line</span> means a validation or test enzyme has a relative in training. Switch strategies to see each one's leaks.</p>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Split strategy" id="strategy"></div>
+    </div>
+    <div class="explorer">
+      <p class="explain" id="explain"></p>
+      <div class="readout">
+        <div><b id="r-leaked" class="bad">–</b>val/test enzymes with a relative in train</div>
+        <div><b id="r-links">–</b>leaking links</div>
+        <div><b id="r-groups">–</b>groups dealt out</div>
+      </div>
+      <svg id="net" role="img" aria-label="Network of 300 enzymes in train, validation and test zones"></svg>
+      <div class="legend">
+        <span><i style="background:var(--train)"></i>Train</span>
+        <span><i style="background:var(--val)"></i>Validation</span>
+        <span><i style="background:var(--test)"></i>Test</span>
+        <span><i class="ring"></i>Leaked enzyme</span>
+        <span><i class="ln"></i>Relatives (same side)</span>
+        <span><i class="ln red"></i>Leak: crosses into train</span>
+        <span><i class="ln dash"></i>Crosses, not counted as a leak (partial match, or val ↔ test)</span>
+      </div>
+      <div class="leaks" id="leaks"></div>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:10px">Hover a dot for details; click one to highlight its relatives. One split per strategy (seed 0); the results below average 10 seeds.</p>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <p class="kicker">Results</p>
+    <h2>Every single tool misses something</h2>
+    <p class="sub">Share of test enzymes with a relative in training, averaged over 10 random seeds. Every strategy hits the same 240 / 30 / 30 sizes, so the only difference is which enzymes end up together.</p>
+    <div class="chart-card">
+      <h3>Any kind of relative in train</h3>
+      <p class="note">Lower is better</p>
+      <div class="chart" id="chart-any"></div>
+    </div>
+    <div class="multiples" id="multiples"></div>
+    <details>
+      <summary>Show the numbers as a table</summary>
+      <div class="table-scroll"><table id="table"></table></div>
+    </details>
+    <div class="grid-3 findings" style="margin-top:28px">
+      <div class="card">
+        <h3>Same shape, different jobs</h3>
+        <p>The biggest shape group is 15 TIM barrels: isomerases, aldolases, synthases and a deaminase. A shared fold doesn't mean shared chemistry, so shape alone can't define "the same active site".</p>
+      </div>
+      <div class="card">
+        <h3>Same active site, different shapes</h3>
+        <p>Zinc metalloproteases (HtpX, FtsH, ADAM) share the HExxH zinc site across 4 different folds. Only Folddisco links them, which is why structure-only splits still leak 3–7% by active site.</p>
+      </div>
+      <div class="card">
+        <h3>Labels are thin</h3>
+        <p>Only 100 of 300 enzymes have annotated active sites, and only 3 of those come from experiments. The rest are inferred from similar proteins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ml">
+  <div class="wrap">
+    <p class="kicker">For the model</p>
+    <h2>What this means once you train something</h2>
+    <p class="sub">This project builds and checks the dataset. No model has been trained yet. These are the rules the split implies for the model that comes next.</p>
+    <div class="ml-list">
+      <div class="card"><h3>What the test score means</h3><p>Can the model handle an enzyme from a family it has never seen? That is harder than a random split, so expect lower scores. Train the same model on both splits: the gap is how much of the "random" score was memorization.</p></div>
+      <div class="card"><h3>Two tasks the data supports</h3><p><b>Per protein:</b> predict the EC class (7 categories). <b>Per residue:</b> predict which amino acids form the active site. That is heavily imbalanced: 1–4 positive residues out of about 400.</p></div>
+      <div class="card"><h3>Missing is not "no"</h3><p>200 enzymes have no active-site annotation, which means "unknown", not "has none". Mask them out of a per-residue loss; never train on them as negatives.</p></div>
+      <div class="card"><h3>Validation vs test</h3><p>Tune hyperparameters and early stopping on validation as often as you like. Score test once, at the end. Checking it repeatedly quietly turns it into a second validation set.</p></div>
+      <div class="card"><h3>Small numbers</h3><p>30 test enzymes means one prediction moves accuracy by 3.3 points. Report bootstrap confidence intervals and results over several split seeds (<code>--seeds</code>).</p></div>
+      <div class="card"><h3>Pretrained models</h3><p>Protein language models such as ESM were trained on nearly every known protein, including relatives of this test set. The split can't control that, so state it with any results.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap">
+    <p class="kicker">Honest limits</p>
+    <h2>What can still leak</h2>
+    <ul class="plain">
+      <li><b>Unannotated active sites.</b> 224 enzymes had no usable motif, so a similar but unannotated site goes unseen.</li>
+      <li><b>Relatives outside the sample.</b> Only these 300 were compared with each other. Swiss-Prot has 266,000 more enzymes.</li>
+      <li><b>Cutoffs are conventions.</b> 30% identity and TM-score 0.5 are standard choices, not hard boundaries. The 0.55 Å cutoff for 3-residue motifs was tuned on this sample only.</li>
+      <li><b>The test set is all singletons.</b> Every multi-member family went to training. That is intended, but it is a distribution shift.</li>
+      <li><b>A few weak leaks remain.</b> In the combined split, three held-out enzymes match a training enzyme over only part of their length (22–26% identity, or TM-score 0.50). One is a real distant relative: RimO and lipoyl synthase are both radical-SAM enzymes. Adding the audit's links to the grouping would remove them.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="run">
+  <div class="wrap">
+    <p class="kicker">Run it</p>
+    <h2>Reproduce everything</h2>
+    <p class="sub">A few minutes on a laptop. Needs <code>uv</code>, MMseqs2 (Homebrew), and the Foldseek and Folddisco binaries; the <a href="https://github.com/ybai08/swissprot-enzyme-splits#readme">README</a> has install commands.</p>
+    <div class="run-steps">
+<pre><code>uv venv .venv &amp;&amp; uv pip install -p .venv -r requirements.txt
+.venv/bin/python scripts/fetch_enzymes.py --n 300 --seed 0   # UniProt sample
+.venv/bin/python scripts/cluster_sequences.py               # MMseqs2
+.venv/bin/python scripts/fetch_structures.py                # AlphaFold DB
+.venv/bin/python scripts/cluster_structures.py              # Foldseek
+.venv/bin/python scripts/motif_groups.py --reindex          # Folddisco
+.venv/bin/python scripts/make_splits.py                     # splits + audit
+.venv/bin/python scripts/build_site_data.py                 # this page's data</code></pre>
+    </div>
+    <p class="sub" style="margin-top:16px">The result: <a href="https://github.com/ybai08/swissprot-enzyme-splits/blob/main/results/dataset_manifest.csv"><code>results/dataset_manifest.csv</code></a>, one row per enzyme with its split, its group from each tool, its active-site and structure status, and notes.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Data: UniProt release 2026_03 and AlphaFold DB. Code: <a href="https://github.com/ybai08/swissprot-enzyme-splits">github.com/ybai08/swissprot-enzyme-splits</a>.</div>
+</footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(() => {
+  const D = window.SITE_DATA;
+  const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const SPLIT_VAR = { train: "--train", val: "--val", test: "--test" };
+  const SPLIT_LABEL = { train: "Train", val: "Validation", test: "Test" };
+  const STRATS = [
+    { key: "random", label: "Random", text: "Each enzyme is placed on its own, like shuffling cards. Relatives land on both sides, so many validation and test enzymes have a cousin in training." },
+    { key: "sequence", label: "Sequence", text: "Enzymes with at least 30% identical sequence stay together (MMseqs2). Close relatives are handled, but enzymes with different sequences and the same shape still cross." },
+    { key: "structure", label: "Structure", text: "Enzymes with the same overall fold stay together (Foldseek). This catches most sequence relatives too, but convergent active sites in different folds still cross." },
+    { key: "motif", label: "Active site", text: "Only enzymes with matching active-site geometry stay together (Folddisco). Almost no other leaks are blocked, because most enzymes have no annotated motif." },
+    { key: "combined", label: "Combined", text: "Relatives by sequence, shape or active site all stay together, merged through chains (A~B, B~C puts A, B and C in one group). Only three weak, partial-length matches remain." },
+  ];
+  const tip = document.getElementById("tip");
+  const showTip = (html, x, y) => {
+    tip.replaceChildren(...html);
+    const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+    const left = Math.min(x + pad, window.innerWidth - w - 8);
+    const top = y + pad + h > window.innerHeight ? y - h - pad : y + pad;
+    tip.style.left = `${Math.max(8, left)}px`;
+    tip.style.top = `${Math.max(8, top)}px`;
+    tip.style.opacity = 1;
+  };
+  const hideTip = () => { tip.style.opacity = 0; };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const row = (label, value) => { const r = el("div", "t-row"); r.append(`${label} `); r.append(el("b", null, value)); return r; };
+  const pct = (v) => `${Math.round(v * 100)}%`;
+
+  /* ---------- toy diagrams ---------- */
+  function toy(svgId, grouped) {
+    const svg = d3.select(`#${svgId}`);
+    const W = 420, H = 220, mid = 280;
+    svg.append("rect").attr("x", 4).attr("y", 24).attr("width", mid - 12).attr("height", H - 30).attr("rx", 10).attr("fill", "none").attr("stroke", css("--grid"));
+    svg.append("rect").attr("x", mid + 4).attr("y", 24).attr("width", W - mid - 8).attr("height", H - 30).attr("rx", 10).attr("fill", "none").attr("stroke", css("--grid"));
+    svg.append("text").attr("x", 14).attr("y", 16).attr("font-size", 12).attr("font-weight", 600).attr("fill", css("--ink-2")).text("Train");
+    svg.append("text").attr("x", mid + 14).attr("y", 16).attr("font-size", 12).attr("font-weight", 600).attr("fill", css("--ink-2")).text("Test");
+    // 6 families of 3 members; group split puts families 0-4 in train and 5 in test.
+    const fams = d3.range(6).map((f) => d3.range(3).map((k) => ({ f, k })));
+    const randomSide = [[0,0,1],[0,1,0],[0,0,0],[1,0,0],[0,0,0],[0,1,1]];
+    const nodes = fams.flat().map((n) => ({ ...n, test: grouped ? n.f === 5 : randomSide[n.f][n.k] === 1 }));
+    const trainSlots = [], testSlots = [];
+    nodes.forEach((n) => (n.test ? testSlots : trainSlots).push(n));
+    const place = (arr, x0, x1) => {
+      const byFam = d3.groups(arr, (d) => d.f);
+      const cols = Math.max(1, Math.min(byFam.length, Math.floor((x1 - x0) / 60)));
+      byFam.forEach(([, members], i) => {
+        const cx = x0 + ((i % cols) + 0.5) * ((x1 - x0) / cols);
+        const cy = 60 + Math.floor(i / cols) * 70 + (i % 2) * 12;
+        members.forEach((m, j) => { const a = (j / members.length) * Math.PI * 2 + i; m.x = cx + Math.cos(a) * 16; m.y = cy + Math.sin(a) * 16; });
+      });
+    };
+    place(trainSlots, 10, mid - 10);
+    place(testSlots, mid + 10, W - 10);
+    const links = [];
+    fams.forEach((fam) => { for (let a = 0; a < 3; a++) for (let b = a + 1; b < 3; b++) links.push([nodes[fam[a].f * 3 + a], nodes[fam[b].f * 3 + b]]); });
+    svg.selectAll("line").data(links).join("line")
+      .attr("x1", (d) => d[0].x).attr("y1", (d) => d[0].y).attr("x2", (d) => d[1].x).attr("y2", (d) => d[1].y)
+      .attr("stroke", (d) => (d[0].test !== d[1].test ? css("--leak") : css("--axis")))
+      .attr("stroke-width", (d) => (d[0].test !== d[1].test ? 2 : 1.2));
+    svg.selectAll("circle").data(nodes).join("circle")
+      .attr("cx", (d) => d.x).attr("cy", (d) => d.y).attr("r", 6)
+      .attr("fill", (d) => css(d.test ? "--test" : "--train")).attr("stroke", css("--surface")).attr("stroke-width", 1.5);
+    const crossing = links.filter((d) => d[0].test !== d[1].test).length;
+    svg.append("text").attr("x", W / 2).attr("y", H - 2).attr("text-anchor", "middle").attr("font-size", 12)
+      .attr("fill", crossing ? css("--leak") : css("--ink-2")).attr("font-weight", 600)
+      .text(crossing ? `${crossing} leaking links` : "0 leaking links");
+  }
+
+  /* ---------- network ---------- */
+  const nodes = D.nodes.map((n, i) => ({ ...n, i }));
+  const links = D.links.map((l, i) => ({ source: l.s, target: l.t, kinds: l.kinds, i }));
+  const nbrs = nodes.map(() => []);
+  links.forEach((l) => { nbrs[l.source].push(l); nbrs[l.target].push(l); });
+  let strategy = "random", pinned = null, sim, zones, W = 900, H = 460;
+  const svg = d3.select("#net");
+  const zoneG = svg.append("g"), linkG = svg.append("g"), nodeG = svg.append("g");
+  const R = 4.5;
+
+  function computeZones() {
+    W = Math.max(300, document.getElementById("net").parentElement.clientWidth - 32);
+    const g = 12;
+    if (W >= 640) {
+      H = 470;
+      const tw = (W - 2 * g) * 0.66, ow = (W - 2 * g - tw) / 2;
+      zones = { train: { x: 0, y: 22, w: tw, h: H - 22 }, val: { x: tw + g, y: 22, w: ow, h: H - 22 }, test: { x: tw + ow + 2 * g, y: 22, w: ow, h: H - 22 } };
+    } else {
+      H = 650;
+      const th = 410, vy = 22 + th + 34, oh = H - vy, hw = (W - g) / 2;
+      zones = { train: { x: 0, y: 22, w: W, h: th }, val: { x: 0, y: vy, w: hw, h: oh }, test: { x: hw + g, y: vy, w: hw, h: oh } };
+    }
+    svg.attr("viewBox", `0 0 ${W} ${H}`).attr("height", H);
+  }
+
+  function drawZones() {
+    const counts = d3.rollup(D.strategies[strategy].split, (v) => v.length, (d) => d);
+    const z = zoneG.selectAll("g.z").data(Object.entries(zones), (d) => d[0]).join((enter) => {
+      const g = enter.append("g").attr("class", "z");
+      g.append("rect").attr("class", "zone").attr("rx", 10);
+      g.append("text").attr("class", "zone-label");
+      g.append("text").attr("class", "zone-count");
+      return g;
+    });
+    z.select("rect").attr("x", (d) => d[1].x + 0.5).attr("y", (d) => d[1].y + 0.5).attr("width", (d) => d[1].w - 1).attr("height", (d) => d[1].h - 1);
+    z.select(".zone-label").attr("x", (d) => d[1].x + 2).attr("y", (d) => d[1].y - 7).text((d) => SPLIT_LABEL[d[0]]);
+    z.select(".zone-count").attr("x", (d) => d[1].x + d[1].w - 2).attr("y", (d) => d[1].y - 7).attr("text-anchor", "end")
+      .text((d) => `${counts.get(d[0]) || 0}${d[1].w < 220 ? "" : " enzymes"}`);
+  }
+
+  const lineSel = linkG.selectAll("line").data(links).join("line");
+  const nodeSel = nodeG.selectAll("circle").data(nodes).join("circle").attr("class", "node").attr("r", R);
+
+  function applyStrategy() {
+    const S = D.strategies[strategy];
+    const leakedSet = new Set(S.leaked), leakLinks = new Set(S.leak_links);
+    nodes.forEach((n) => { n.split = S.split[n.i]; n.leaked = leakedSet.has(n.i); });
+    links.forEach((l) => { l.leak = leakLinks.has(l.i); });
+    nodeSel.attr("fill", (d) => css(SPLIT_VAR[d.split])).classed("leaked", (d) => d.leaked);
+    lineSel.classed("leak", (d) => d.leak)
+      .classed("partial", (d) => !d.leak && d.source.split !== d.target.split);
+    linkG.selectAll("line.leak").raise();
+    drawZones();
+    document.getElementById("r-leaked").textContent = `${S.leaked.length} of 60`;
+    document.getElementById("r-links").textContent = S.leak_links.length;
+    const cmp = D.comparison.find((c) => c.strategy === strategy);
+    document.getElementById("r-groups").textContent = cmp.n_groups;
+    document.getElementById("explain").textContent = STRATS.find((s) => s.key === strategy).text;
+    renderLeakList(S);
+    highlight(pinned);
+    sim.force("x").x((d) => zones[d.split].x + zones[d.split].w / 2);
+    sim.force("y").y((d) => zones[d.split].y + zones[d.split].h / 2);
+    sim.force("link").strength((l) => (l.source.split === l.target.split ? 0.25 : 0.0));
+    sim.alpha(0.9).restart();
+  }
+
+  function renderLeakList(S) {
+    const box = document.getElementById("leaks");
+    box.replaceChildren();
+    const items = S.leak_links.map((i) => links[i]).map((l) => {
+      const a = l.source, b = l.target;
+      const held = a.split === "train" ? b : a, train = held === a ? b : a;
+      return { held, train, kinds: l.kinds };
+    }).sort((x, y) => d3.ascending(x.held.split, y.held.split) || d3.ascending(x.held.name, y.held.name));
+    const h = el("h3", null, items.length ? `Leaking links in this split (${items.length})` : "No leaking links in this split");
+    box.append(h);
+    if (!items.length) return;
+    const ul = el("ul");
+    const LIMIT = 14;
+    items.slice(0, LIMIT).forEach((it) => {
+      const li = el("li");
+      li.append(el("b", null, it.held.name));
+      li.append(` (${SPLIT_LABEL[it.held.split].toLowerCase()}) ↔ ${it.train.name} (train)`);
+      it.kinds.forEach((k) => li.append(el("span", "tag", k)));
+      ul.append(li);
+    });
+    box.append(ul);
+    if (items.length > LIMIT) box.append(el("p", "muted", `+ ${items.length - LIMIT} more`));
+  }
+
+  function highlight(idx) {
+    if (idx == null) {
+      nodeSel.classed("dim", false).classed("hl", false);
+      lineSel.classed("dim", false).classed("hl", false);
+      return;
+    }
+    const keep = new Set([idx]);
+    nbrs[idx].forEach((l) => { keep.add(l.source.i ?? l.source); keep.add(l.target.i ?? l.target); });
+    nodeSel.classed("dim", (d) => !keep.has(d.i)).classed("hl", (d) => d.i === idx);
+    const mine = new Set(nbrs[idx].map((l) => l.i));
+    lineSel.classed("dim", (d) => !mine.has(d.i)).classed("hl", (d) => mine.has(d.i));
+  }
+
+  function tipFor(n) {
+    const parts = [el("div", "t-name", n.name)];
+    parts.push(row("", `${n.id} · EC ${n.ec}`));
+    parts.push(row("Organism", n.organism));
+    parts.push(row("Split", SPLIT_LABEL[n.split]));
+    parts.push(row("Relatives found", String(nbrs[n.i].length)));
+    parts.push(row("Active site", n.act_site ? "annotated" : "unknown"));
+    if (!n.has_structure) parts.push(row("Structure", "none in AlphaFold DB"));
+    if (n.leaked) parts.push(el("div", "t-leak", "Leak: has a relative in train"));
+    return parts;
+  }
+
+  function nearest(event) {
+    const [px, py] = d3.pointer(event, svg.node());
+    let best = null, bd = 18 * 18;
+    for (const n of nodes) { const d = (n.x - px) ** 2 + (n.y - py) ** 2; if (d < bd) { bd = d; best = n; } }
+    return best;
+  }
+  svg.on("pointermove", (event) => {
+    const n = nearest(event);
+    if (!n) { hideTip(); if (pinned == null) highlight(null); svg.style("cursor", null); return; }
+    svg.style("cursor", "pointer");
+    showTip(tipFor(n), event.clientX, event.clientY);
+    if (pinned == null) highlight(n.i);
+  }).on("pointerleave", () => { hideTip(); if (pinned == null) highlight(null); })
+    .on("click", (event) => { const n = nearest(event); pinned = n && pinned !== n.i ? n.i : null; highlight(pinned); });
+
+  function clamp(n) {
+    const z = zones[n.split]; if (!z) return;
+    n.x = Math.max(z.x + R + 4, Math.min(z.x + z.w - R - 4, n.x));
+    n.y = Math.max(z.y + R + 4, Math.min(z.y + z.h - R - 4, n.y));
+  }
+
+  function startSim() {
+    computeZones();
+    const S = D.strategies[strategy];
+    nodes.forEach((n) => {
+      n.split = S.split[n.i];
+      const z = zones[n.split];
+      n.x = z.x + Math.random() * z.w; n.y = z.y + Math.random() * z.h;
+    });
+    sim = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).distance(14).strength(0.25))
+      .force("charge", d3.forceManyBody().strength(-16).distanceMax(90))
+      .force("collide", d3.forceCollide(R + 1.4))
+      .force("x", d3.forceX().strength(0.035))
+      .force("y", d3.forceY().strength(0.06))
+      .alphaDecay(0.03)
+      .on("tick", () => {
+        nodes.forEach(clamp);
+        lineSel.attr("x1", (d) => d.source.x).attr("y1", (d) => d.source.y).attr("x2", (d) => d.target.x).attr("y2", (d) => d.target.y);
+        nodeSel.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+      });
+    applyStrategy();
+  }
+
+  const seg = document.getElementById("strategy");
+  STRATS.forEach((s) => {
+    const b = el("button", null, s.label);
+    b.type = "button";
+    b.setAttribute("aria-pressed", s.key === strategy);
+    b.addEventListener("click", () => {
+      strategy = s.key;
+      seg.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+      applyStrategy();
+    });
+    seg.append(b);
+  });
+
+  /* ---------- charts ---------- */
+  function barChart(container, key, opts = {}) {
+    const rows = STRATS.map((s) => ({ ...s, v: D.comparison.find((c) => c.strategy === s.key)[key] }));
+    const root = d3.select(container);
+    root.selectAll("*").remove();
+    const width = Math.max(240, container.clientWidth);
+    const labelW = opts.compact ? 78 : 96, barH = opts.compact ? 14 : 20, gap = opts.compact ? 10 : 14, top = 6, bottom = 22;
+    const height = top + rows.length * (barH + gap) - gap + bottom;
+    const max = opts.max ?? 0.5;
+    const x = d3.scaleLinear().domain([0, max]).range([labelW, width - (opts.compact ? 8 : 44)]);
+    const s = root.append("svg").attr("viewBox", `0 0 ${width} ${height}`).attr("height", height).attr("role", "img")
+      .attr("aria-label", opts.aria || key);
+    const ticks = x.ticks(opts.compact ? 2 : 5);
+    s.append("g").attr("class", "grid").selectAll("line").data(ticks).join("line")
+      .attr("x1", (d) => x(d)).attr("x2", (d) => x(d)).attr("y1", top - 2).attr("y2", height - bottom + 2);
+    s.append("g").attr("class", "axis").selectAll("text").data(ticks).join("text")
+      .attr("x", (d) => x(d)).attr("y", height - 6).attr("text-anchor", "middle").text((d) => pct(d));
+    const g = s.append("g").selectAll("g").data(rows).join("g").attr("transform", (d, i) => `translate(0,${top + i * (barH + gap)})`);
+    g.append("text").attr("class", "cat").attr("x", labelW - 8).attr("y", barH / 2).attr("dy", "0.35em").attr("text-anchor", "end").text((d) => d.label);
+    // Bar with a 4px rounded data end, square at the baseline.
+    g.append("path").attr("class", (d) => `bar ${d.key === "combined" ? "" : "other"}`)
+      .attr("d", (d) => {
+        const x0 = x(0), x1 = Math.max(x0 + 1, x(d.v)), r = Math.min(4, (x1 - x0) / 2, barH / 2);
+        return `M${x0},0H${x1 - r}Q${x1},0 ${x1},${r}V${barH - r}Q${x1},${barH} ${x1 - r},${barH}H${x0}Z`;
+      });
+    if (!opts.compact) {
+      g.append("text").attr("class", "val").attr("x", (d) => x(d.v) + 6).attr("y", barH / 2).attr("dy", "0.35em").text((d) => pct(d.v));
+    }
+    // Hit target: the full row, larger than the bar.
+    g.append("rect").attr("x", 0).attr("y", -gap / 2).attr("width", width).attr("height", barH + gap).attr("fill", "transparent")
+      .on("pointermove", (event, d) => {
+        d3.select(event.currentTarget.parentNode).select(".bar").classed("focus", true);
+        showTip([el("div", "t-name", pct(d.v)), row("", `${d.label} split · ${opts.title || "any relative"}`)], event.clientX, event.clientY);
+      })
+      .on("pointerleave", (event) => { d3.select(event.currentTarget.parentNode).select(".bar").classed("focus", false); hideTip(); });
+  }
+
+  const MULTI = [
+    { key: "test_seq_any", title: "Sequence hit" },
+    { key: "test_seq30", title: "≥ 30% identity" },
+    { key: "test_fold", title: "Same fold" },
+    { key: "test_motif", title: "Same active site" },
+  ];
+  function renderCharts() {
+    barChart(document.getElementById("chart-any"), "test_any", { max: 0.5, aria: "Bar chart: share of test enzymes with any relative in train, by strategy" });
+    const mult = document.getElementById("multiples");
+    mult.replaceChildren();
+    const maxAll = 0.4;
+    MULTI.forEach((m) => {
+      const card = el("div", "chart-card");
+      card.append(el("h3", null, m.title));
+      const c = el("div", "chart");
+      card.append(c);
+      mult.append(card);
+      barChart(c, m.key, { compact: true, max: maxAll, title: m.title.toLowerCase(), aria: `Bar chart: ${m.title}` });
+    });
+  }
+
+  function renderTable() {
+    const t = document.getElementById("table");
+    const cols = [["Strategy", (r) => STRATS.find((s) => s.key === r.strategy).label], ["Groups", (r) => r.n_groups], ["Largest", (r) => r.largest_group],
+      ["Seq hit", (r) => pct(r.test_seq_any)], ["≥30% id", (r) => pct(r.test_seq30)], ["Fold", (r) => pct(r.test_fold)],
+      ["Active site", (r) => pct(r.test_motif)], ["Any (test)", (r) => pct(r.test_any)], ["Any (val)", (r) => pct(r.val_any)]];
+    const thead = el("thead"), tr = el("tr");
+    cols.forEach(([h]) => tr.append(el("th", null, h)));
+    thead.append(tr);
+    const tbody = el("tbody");
+    STRATS.forEach((s) => {
+      const r = D.comparison.find((c) => c.strategy === s.key);
+      const row = el("tr");
+      cols.forEach(([, f]) => row.append(el("td", null, String(f(r)))));
+      tbody.append(row);
+    });
+    t.replaceChildren(thead, tbody);
+  }
+
+  function renderAll() {
+    d3.selectAll("#toy-random *, #toy-group *").remove();
+    toy("toy-random", false);
+    toy("toy-group", true);
+    renderCharts();
+  }
+
+  renderAll();
+  renderTable();
+  startSim();
+
+  let rt;
+  window.addEventListener("resize", () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => { renderCharts(); computeZones(); applyStrategy(); }, 150);
+  });
+  // Re-read colors when the OS theme changes.
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { renderAll(); applyStrategy(); });
+})();
+</script>
+</body>
+</html>

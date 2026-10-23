@@ -128,15 +128,29 @@ def fold_allvsall(struct_dir, out):
     return hits[hits["query"] != hits["target"]]
 
 
+def both_ways(df, own, other):
+    """Read every hit from both sides: (protein, partner, that protein's own normalized value).
+
+    Searches are not symmetric (a hit may only be found with one protein as the query),
+    so each row also yields the reverse pair, with coverage / TM-score normalized by
+    the target. The first column is then always the protein being judged.
+    """
+    fwd = df[["query", "target", own]].rename(columns={own: "value"})
+    rev = df[["target", "query", other]].rename(columns={"target": "query", "query": "target", other: "value"})
+    return pd.concat([fwd, rev], ignore_index=True)
+
+
 def leak_pairs(seq, fold, motif):
     """Directed (held-out protein, other protein) pairs for each leakage type."""
+    cov = both_ways(seq, "qcov", "tcov")
+    tm = both_ways(fold, "qtmscore", "ttmscore")
+    seq30 = both_ways(seq[seq.fident >= 0.3], "qcov", "tcov")
     pairs = {
-        "seq_any": seq[["query", "target"]],
-        "seq30": seq.loc[(seq.fident >= 0.3) & (seq.qcov >= 0.5), ["query", "target"]],
-        "fold": fold.loc[fold.qtmscore >= 0.5, ["query", "target"]],
+        "seq_any": cov[["query", "target"]],
+        "seq30": seq30.loc[seq30.value >= 0.5, ["query", "target"]],
+        "fold": tm.loc[tm.value >= 0.5, ["query", "target"]],
         # A motif hit links both proteins, whichever one was the query.
-        "motif": pd.concat([motif[["query", "target"]],
-                            motif.rename(columns={"query": "target", "target": "query"})[["query", "target"]]]),
+        "motif": both_ways(motif.assign(x=0), "x", "x")[["query", "target"]],
     }
     return {k: set(map(tuple, v.itertuples(index=False))) for k, v in pairs.items()}
 

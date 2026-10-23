@@ -4,6 +4,9 @@ First mini coding project. Build a dataset of reviewed Swiss-Prot enzymes for an
 active-site ML model (function, substrate specificity, cofactor dependency, ...),
 then split it 80/10/10 into train/validation/test while minimizing data leakage.
 
+**Project page:** https://ybai08.github.io/swissprot-enzyme-splits/ (interactive
+explorer of the splits; source in `docs/`, data from `scripts/build_site_data.py`).
+
 ## Leakage to prevent
 
 | Type | Tool | Example |
@@ -20,7 +23,7 @@ similarity after splitting.
 
 ```
 notebooks/   starter Colab notebook (AI-generated scaffold)
-docs/        exercise guide (.docx + .txt copy)
+docs/        project website (index.html, data.js) and exercise guide (.docx + .txt)
 data/        fetched metadata and FASTA; structures/ is not committed (72 MB),
              rebuild with scripts/fetch_structures.py
 results/     cluster TSVs, manifests, split comparison tables; the Folddisco
@@ -276,16 +279,23 @@ train protein:
 - `fold`: a Foldseek hit with TM-score ≥ 0.5, normalized by the held-out protein.
 - `motif`: a strict Folddisco hit.
 
+Each hit is read from both sides. Searches are not symmetric: a hit may only be found
+with one protein as the query. Coverage and TM-score are always taken relative to the
+held-out protein.
+
 Fraction of **test** proteins leaked, mean over 10 seeds (`results/split_comparison.tsv`):
 
 | strategy | groups | largest | seq_any | seq30 | fold | motif | any |
 |---|---|---|---|---|---|---|---|
 | random | 300 | 1 | 0.35 | 0.20 | 0.39 | 0.04 | **0.46** |
 | sequence | 266 | 4 | 0.18 | 0.04 | 0.22 | 0.06 | 0.30 |
-| structure | 202 | 15 | 0.01 | 0.00 | 0.02 | 0.03 | 0.06 |
-| motif | 289 | 5 | 0.31 | 0.18 | 0.38 | 0.00 | 0.42 |
-| **combined** | 195 | 15 | 0.02 | 0.00 | 0.03 | 0.00 | **0.05** |
-| combined_lenient | 172 | 40 | 0.01 | 0.00 | 0.02 | 0.00 | 0.03 |
+| structure | 202 | 15 | 0.02 | 0.00 | 0.02 | 0.03 | 0.07 |
+| motif | 289 | 5 | 0.32 | 0.18 | 0.38 | 0.00 | 0.43 |
+| **combined** | 195 | 15 | 0.03 | 0.00 | 0.03 | 0.00 | **0.06** |
+| combined_lenient | 172 | 40 | 0.04 | 0.00 | 0.02 | 0.00 | 0.06 |
+
+On validation, `any` is 0.45 random, 0.33 sequence, 0.14 structure, 0.42 motif,
+**0.05 combined** and 0.06 combined_lenient.
 
 Findings:
 
@@ -294,14 +304,17 @@ Findings:
 - Sequence clustering alone still leaves 22% fold leakage.
 - Structure clustering alone also removes most sequence leakage, because homologs
   share folds. It does not remove motif leakage: 3% on test, 7% on val. That is the
-  convergent active sites from step 5.
+  convergent active sites from step 5. On validation it leaks 14% overall, against 5%
+  for `combined`.
 - Each single axis fails on at least one leakage type. Only `combined` brings all
-  four near zero, at the same 80/10/10 sizes.
-- `combined_lenient` shows no clear gain. Test leakage is 0.033 vs 0.047, but val
-  leakage is 0.047 vs 0.033, and its largest group is 2.7× bigger.
-- The seed-0 `combined` split has two residual leaks, both weak:
-  - Q3BAK5 (test) to a train dehydrogenase: 24% identity over 36% coverage.
-  - Q1I6F8 (val) to a train NAD synthetase: TM 0.502.
+  four near zero on both val and test, at the same 80/10/10 sizes.
+- `combined_lenient` shows no gain (test 0.057 vs 0.060, val 0.060 vs 0.050), and
+  its largest group is 2.7× bigger.
+- The seed-0 `combined` split has three leaked proteins, all through weak, partial matches:
+  - Q3BAK5 (test, RNA polymerase α) to a train dehydrogenase: 24% identity over 36% coverage.
+  - A0M3K8 (test, RimO) to two train lipoyl synthases: 23–26% identity over 37–56%
+    coverage. Both are radical-SAM enzymes, so this is a real distant homology.
+  - Q1I6F8 (val, QueC) to a train NAD synthetase: TM 0.50.
 
   The audit searches catch partial-domain matches that the clusters (80% / 50%
   coverage) skip. To remove them, add the audit graph's edges when grouping.

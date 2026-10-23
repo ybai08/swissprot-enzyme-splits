@@ -8,3 +8,6 @@ data/structures/
 results/folddisco/index*
 results/folddisco/input/
 results/**/tmp*/
+
+# Local tooling
+.claude/

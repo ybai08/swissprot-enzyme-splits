@@ -1,7 +1,7 @@
 strategy	grouping	n_groups	largest_group	largest_group_frac	n_train	n_val	n_test	test_ec_classes	test_act_site_annotated	val_seq_any	val_seq30	val_fold	val_motif	val_any	test_seq_any	test_seq30	test_fold	test_motif	test_any
-random	per protein	300	1	0.003	240.0	30.0	30.0	6.8	10.9	0.333	0.197	0.383	0.033	0.447	0.347	0.197	0.39	0.037	0.457
-sequence	seq30	266	4	0.013	240.0	30.0	30.0	6.8	11.5	0.16	0.017	0.25	0.03	0.32	0.18	0.04	0.22	0.057	0.297
-structure	fold_tm50_c50	202	15	0.05	240.0	30.0	30.0	6.1	12.2	0.037	0.01	0.037	0.073	0.12	0.013	0.0	0.02	0.027	0.06
-motif	motif_strict	289	5	0.017	240.0	30.0	30.0	6.9	9.6	0.283	0.183	0.383	0.0	0.417	0.313	0.177	0.383	0.0	0.42
-combined	seq30 + fold_tm50_c50 + motif_strict	195	15	0.05	240.0	30.0	30.0	6.8	12.0	0.0	0.0	0.033	0.0	0.033	0.017	0.0	0.03	0.0	0.047
-combined_lenient	seq30 + fold_tm50_c50 + motif_lenient	172	40	0.133	240.0	30.0	30.0	6.4	10.3	0.017	0.0	0.03	0.0	0.047	0.013	0.0	0.02	0.0	0.033
+random	per protein	300	1	0.003	240.0	30.0	30.0	6.8	10.9	0.333	0.197	0.383	0.033	0.447	0.35	0.197	0.39	0.037	0.46
+sequence	seq30	266	4	0.013	240.0	30.0	30.0	6.8	11.5	0.173	0.017	0.25	0.03	0.333	0.18	0.04	0.22	0.057	0.297
+structure	fold_tm50_c50	202	15	0.05	240.0	30.0	30.0	6.1	12.2	0.06	0.01	0.037	0.073	0.143	0.02	0.0	0.02	0.027	0.067
+motif	motif_strict	289	5	0.017	240.0	30.0	30.0	6.9	9.6	0.287	0.183	0.383	0.0	0.42	0.32	0.177	0.383	0.0	0.427
+combined	seq30 + fold_tm50_c50 + motif_strict	195	15	0.05	240.0	30.0	30.0	6.8	12.0	0.017	0.0	0.033	0.0	0.05	0.03	0.0	0.03	0.0	0.06
+combined_lenient	seq30 + fold_tm50_c50 + motif_lenient	172	40	0.133	240.0	30.0	30.0	6.4	10.3	0.03	0.0	0.03	0.0	0.06	0.037	0.0	0.02	0.0	0.057
