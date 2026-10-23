@@ -1,0 +1,301 @@
+accession	motif_residues	motif_size	motif_source	motif_plddt	query_status	motif_aa
+A0A031WDE4	A434,A436	2	act_site	91.91	motif_too_small	CYS,GLU
+A0A0H3DN66		0	none		no_act_site	
+A0A0R3K2G2	A45,A47,A49,A249,A337,A341	6	act_site+binding	90.45	queried	SER,ILE,HIS,LYS,SER,SER
+A0A1L7VEQ6		0	none		no_act_site	
+A0A2Z5XAK6		0	none		no_act_site	
+A0M3K8		0	none		no_act_site	
+A1A2E8		0	none		no_act_site	
+A1AH96	A237,A266,A285	3	act_site	96.73	queried	ARG,GLU,HIS
+A1B0M2		0	none		no_act_site	
+A1B9Q2	A52,A59,A93	3	act_site+binding	96.06	queried	CYS,ASP,HIS
+A1CAX3	A145,A177,A178	3	act_site+binding	97.33	queried	ASP,GLU,GLU
+A1JSF0	A202,A255	2	act_site	95.69	motif_too_small	SER,HIS
+A1RPV7		0	none		no_act_site	
+A1UHL4		0	none		no_act_site	
+A1URN4		0	none		no_act_site	
+A1VFZ7		0	none		no_act_site	
+A2QX25		0	none		no_act_site	
+A3MT41	A13,A151,A318	3	act_site+binding	98.21	queried	THR,CYS,ASN
+A3NYW6		0	none		no_act_site	
+A4G5V5	A120	1	act_site	96.44	motif_too_small	CYS
+A4IQD8		0	none		no_act_site	
+A4QCP0		0	none		no_act_site	
+A4R8G3		0	none		no_act_site	
+A4SFN5		0	none		no_act_site	
+A4SPR3	A143,A144,A147,A225	4	act_site+binding	95.75	queried	HIS,GLU,HIS,GLU
+A4TM39		0	none		no_act_site	
+A4TPM1		0	none		no_act_site	
+A4VLR0		0	none		no_act_site	
+A4W5N8		0	none		no_act_site	
+A4W9M7		0	none		no_act_site	
+A4YND6		0	none		no_act_site	
+A5CEC9		0	none		no_act_site	
+A5E1A0	A39,A41,A117	3	act_site+binding	94.69	queried	THR,ASN,GLU
+A5FK68		0	none		no_act_site	
+A5HAK0	A38,A67,A69,A70,A71,A142	6	act_site+binding	98.65	queried	HIS,LYS,VAL,ASN,THR,HIS
+A6QC00		0	none		no_act_site	
+A6U8Q2		0	none		no_act_site	
+A6UB24	A146,A166,A167,A168,A169,A177	6	act_site+binding	97.61	queried	CYS,ARG,SER,GLY,ASP,ASN
+A6V4H5		0	none		no_act_site	
+A6V9K1		0	none		no_act_site	
+A6VM79		0	none		no_act_site	
+A6WHB7	A94,A98,A108,A110,A111,A112	6	act_site+binding	98.32	queried	SER,HIS,HIS,ASN,VAL,ARG
+A7IAS7		0	none		no_act_site	
+A7MNE5		0	none		no_act_site	
+A7NBA0	A34,A35,A87,A100,A101,A109	6	act_site+binding	98.34	queried	THR,GLY,ASP,LYS,GLY,GLU
+A7X4T7	A51	1	act_site	98.56	motif_too_small	HIS
+A7ZTJ1		0	none		no_act_site	
+A7ZWC9		0	none		no_act_site	
+A8GC40		0	none		no_act_site	
+A8GYI2	A62,A66,A87,A103,A130,A131	6	act_site+binding	95.67	queried	THR,LYS,ASN,ASP,GLY,ALA
+A8H3V4		0	none		no_act_site	
+A8HAG5		0	none		no_act_site	
+A8LIV0		0	none		no_act_site	
+A8P5H7		0	none		no_act_site	
+A8Z4Y6		0	none		no_act_site	
+A9MZL6		0	none		no_act_site	
+A9R4F6		0	none		no_act_site	
+A9SCJ6		0	none		no_act_site	
+A9VFM1	A324,A535,A539	3	act_site+binding	83.37	queried	ASP,ASP,ASP
+B0BB97		0	none		no_act_site	
+B0BSH8		0	none		no_act_site	
+B0JFY2		0	none		no_act_site	
+B0SHG0		0	none		no_act_site	
+B0TM56	A410	1	act_site	98.44	motif_too_small	CYS
+B0U1H6		0	none		no_act_site	
+B0UU27	A13,A156,A157,A160,A166,A167	6	act_site+binding	92.47	queried	ARG,HIS,HIS,LYS,GLY,THR
+B0V8M8		0	none		no_act_site	
+B0VBN5		0	none		no_act_site	
+B0VND0	A129,A155,A251,A275,A278,A307	6	act_site+binding	95.87	queried	TYR,THR,LYS,HIS,ARG,SER
+B0Y9Q9	A405,A501	2	act_site	97.69	motif_too_small	GLU,GLU
+B1NTR4		0	none		no_act_site	
+B1VXU2		0	none		no_act_site	
+B2I6L3	A264,A269,A276,A346,A348,A350	6	act_site+binding	98.74	queried	LYS,ASP,LYS,ASP,GLU,ARG
+B2I9J3	A49,A60	2	act_site	94.28	motif_too_small	GLU,ASP
+B2IIK7		0	none		no_act_site	
+B2IYE4	A23,A24,A314,A341,A345,A386	6	act_site+binding	96.48	queried	LYS,SER,ASP,LYS,ARG,ARG
+B2J9T1	A25,A57,A58,A73,A74,A75	6	act_site+binding	94.72	queried	SER,THR,TYR,GLY,GLY,ALA
+B2JCV1	A285	1	act_site	80.0	motif_too_small	ASP
+B2KB05		0	none		no_act_site	
+B2KE80		0	none		no_act_site	
+B2SXN2		0	none		no_act_site	
+B2TUP1		0	none		no_act_site	
+B3EPH5	A9,A11,A96,A166,A212,A233	6	act_site+binding	96.85	queried	ASN,LYS,HIS,GLU,SER,GLY
+B3H011		0	none		no_act_site	
+B3H1Y9		0	none		no_act_site	
+B3PBR1		0	none		no_act_site	
+B4S9G0	A11,A130	2	act_site	94.88	motif_too_small	ASP,ASP
+B4SRY6	A25,A57,A58,A73,A74,A75	6	act_site+binding	96.7	queried	SER,THR,TYR,GLY,GLY,ALA
+B4SXE4		0	none		no_act_site	
+B4TUC3	A220,A221,A222,A225,A243,A277	6	act_site+binding	96.78	queried	GLY,SER,ALA,GLY,GLU,CYS
+B5BA65		0	none		no_act_site	
+B5EHA7	A101,A243,A245,A247	4	act_site+binding	97.39	queried	SER,ASP,ASP,ASP
+B5RC85		0	none		no_act_site	
+B5XJH3		0	none		no_act_site	
+B5XU88		0	none		no_act_site	
+B6EHK0		0	none		no_act_site	
+B7GXT4		0	none		no_act_site	
+B7HGZ9		0	none		no_act_site	
+B7JVH9		0	none		no_act_site	
+B7K1R5	A49,A50,A51,A52,A116,A120	6	act_site+binding	89.7	queried	THR,CYS,ASN,ARG,GLN,GLN
+B7LK20		0	none		no_act_site	
+B7MM49		0	none		no_act_site	
+B7N609		0	none		no_act_site	
+B7NR34		0	none		no_act_site	
+B7VKE7	A72,A73,A74,A75,A137,A168	6	act_site+binding	92.49	queried	GLY,GLN,VAL,THR,SER,CYS
+B8CM22		0	none		no_act_site	
+B8E200	A6,A28,A57,A83,A105,A127	6	act_site+binding	98.07	queried	ASP,ASN,GLU,LYS,ASN,SER
+B8GLE3		0	none		no_act_site	
+B8JEX6		0	none		no_act_site	
+B9DWF3		0	none		no_act_site	
+B9MJX8	A8,A96,A97,A98,A101,A134	6	act_site+binding	95.71	queried	LYS,GLY,LEU,ALA,SER,ASP
+C0MGG5	A10,A73,A74,A183,A184,A185	6	act_site+binding	97.69	queried	ASP,CYS,ASN,CYS,THR,HIS
+C1CTD6		0	none		no_act_site	
+C3LFG7		0	none		no_act_site	
+C3MYD9		0	none		no_act_site	
+C3P3F8		0	none		no_act_site	
+C4L9Z3	A91,A92,A191,A198,A230,A259	6	act_site+binding	93.48	queried	GLU,SER,CYS,ASP,HIS,ARG
+C4ZY95		0	none		no_act_site	
+C5BQX2		0	none		no_act_site	
+C6A2P7		0	none		no_act_site	
+C6E7R1	A107,A140,A193,A246,A256,A258	6	act_site+binding	97.45	queried	LYS,SER,LYS,ASP,SER,ASN
+C7Z9Z4		0	none		no_act_site	
+D2NGI4		0	none		no_act_site	
+D4DI84	A185,A186,A189	3	act_site+binding	98.69	queried	HIS,GLU,HIS
+D4GQU6		0	none		no_act_site	
+D7E9E7		0	none		no_act_site	
+E7LXI9		0			no_structure	
+G3XMB9		0	none		no_act_site	
+O13966		0	none		no_act_site	
+O22184		0	none		no_act_site	
+O35493	A170,A286	2	act_site+binding	91.94	motif_too_small	PHE,ASP
+O42376	A36,A151	2	act_site+binding	78.38	motif_too_small	TYR,ASP
+O51121		0	none		no_act_site	
+O59314		0	none		no_act_site	
+O69913		0	none		no_act_site	
+O88763		0	none		no_act_site	
+P05302	A76	1	act_site	68.81	motif_too_small	CYS
+P08791		0	none		no_act_site	
+P0AB84		0	none		no_act_site	
+P0ACD3		0	none		no_act_site	
+P0C7K7	A225,A252,A278,A326,A366	5	act_site+binding	93.79	queried	HIS,HIS,HIS,HIS,ASP
+P0CB61		0	none		no_act_site	
+P0CQ47		0	none		no_act_site	
+P0DJL8	A40,A134,A263,A310	4	act_site+binding	94.89	queried	LYS,ARG,TYR,MET
+P32946	A223,A355,A463	3	act_site	98.58	queried	SER,GLU,HIS
+P39411		0	none		no_act_site	
+P40999	A81	1	act_site	63.47	motif_too_small	CYS
+P41571	A184,A214,A215,A216,A271,A276	6	act_site+binding	93.34	queried	LYS,HIS,TYR,LEU,ASP,HIS
+P42439		0	none		no_act_site	
+P45181	A79,A82,A83,A159	4	act_site+binding	96.59	queried	HIS,GLU,HIS,GLU
+P46852		0	none		no_act_site	
+P48455	A88,A114,A146,A147,A195,A277	6	act_site+binding	98.41	queried	HIS,ASP,ASN,HIS,HIS,HIS
+P58350		0	none		no_act_site	
+P58619		0	none		no_act_site	
+P58866		0			no_structure	
+P66996		0	none		no_act_site	
+P74304	A12,A35,A38	3	act_site+binding	98.08	queried	SER,ARG,HIS
+P75216		0	none		no_act_site	
+P76329	A13,A15,A214	3	act_site+binding	95.19	queried	ASP,ASP,ASP
+P77650		0	none		no_act_site	
+P77978		0	none		no_act_site	
+P78536	A184,A405,A406,A409,A415	5	act_site+binding	85.53	queried	CYS,HIS,GLU,HIS,HIS
+P80201	A218,A219,A336	3	act_site+binding	82.1	queried	ARG,TYR,ASP
+Q02Z29		0	none		no_act_site	
+Q03NQ6		0	none		no_act_site	
+Q03W54	A12	1	act_site	93.5	motif_too_small	CYS
+Q07103		0	none		no_act_site	
+Q07NL5		0	none		no_act_site	
+Q07ZQ7		0	none		no_act_site	
+Q0AXM5	A253,A294,A295,A327,A329,A355	6	act_site+binding	84.99	queried	SER,GLY,ARG,ASP,ARG,LYS
+Q0C639	A10,A131	2	act_site	95.19	motif_too_small	ASP,ASP
+Q0HE67		0	none		no_act_site	
+Q0HXV7		0	none		no_act_site	
+Q0V8B7		0	none		no_act_site	
+Q0VMA6	A7,A166,A169	3	act_site+binding	93.06	queried	THR,CYS,THR
+Q117D2	A2,A3,A60,A290	4	act_site	93.95	queried	PRO,GLU,LYS,ARG
+Q12001		0	none		no_act_site	
+Q12F12		0	none		no_act_site	
+Q12GA4		0	none		no_act_site	
+Q14J34		0	none		no_act_site	
+Q1CUX6		0	none		no_act_site	
+Q1H4H6	A81,A123,A124,A195,A491,A517	6	act_site+binding	92.05	queried	ASP,ASP,LYS,CYS,GLU,SER
+Q1I6F8		0	none		no_act_site	
+Q1IKR2		0	none		no_act_site	
+Q1J450		0	none		no_act_site	
+Q1J8E4		0	none		no_act_site	
+Q1JJZ6		0	none		no_act_site	
+Q1RI29		0	none		no_act_site	
+Q21Y60	A79,A80,A140,A144,A186,A188	6	act_site+binding	94.45	queried	CYS,SER,TYR,LYS,LYS,ARG
+Q221U7	A16,A17,A20,A201,A290	5	act_site+binding	98.04	queried	ARG,ASP,HIS,HIS,TYR
+Q27UB1	A255,A278	2	act_site	97.75	motif_too_small	ASP,HIS
+Q28VJ6		0	none		no_act_site	
+Q2G8P1		0	none		no_act_site	
+Q2ITQ2	A49,A52,A94,A95,A96,A97	6	act_site+binding	92.27	queried	HIS,TYR,SER,HIS,ASN,HIS
+Q2IUT3		0	none		no_act_site	
+Q2JKV7		0	none		no_act_site	
+Q2NQQ2	A260,A322,A375	3	act_site+binding	98.29	queried	LYS,ASP,CYS
+Q2U6U0		0	none		no_act_site	
+Q2Y5G5		0	none		no_act_site	
+Q2YN10		0	none		no_act_site	
+Q31JG7		0	none		no_act_site	
+Q32D53		0	none		no_act_site	
+Q39BZ1		0	none		no_act_site	
+Q39FR0		0	none		no_act_site	
+Q39RP7		0	none		no_act_site	
+Q39YM2		0	none		no_act_site	
+Q3AGU9		0	none		no_act_site	
+Q3ATW8		0	none		no_act_site	
+Q3AWK9		0	none		no_act_site	
+Q3BAK5		0	none		no_act_site	
+Q3IIQ6	A12,A13,A14,A40,A41,A42	6	act_site+binding	89.98	queried	GLY,ASP,GLU,GLY,HIS,THR
+Q3IT46		0	none		no_act_site	
+Q3J8Y6		0	none		no_act_site	
+Q3T1J2	A341,A372	2	act_site	95.87	motif_too_small	ASN,HIS
+Q3Z2G8	A139,A140,A143,A222	4	act_site+binding	96.12	queried	HIS,GLU,HIS,GLU
+Q46ZM0		0	none		no_act_site	
+Q493A5		0	none		no_act_site	
+Q4FQG6		0	none		no_act_site	
+Q4K6U5	A11,A87,A104,A114,A117	5	act_site+binding	98.23	queried	LYS,ARG,ARG,ASN,HIS
+Q4UUW5		0	none		no_act_site	
+Q4UYJ6		0	none		no_act_site	
+Q4WLW6		0	none		no_act_site	
+Q4ZLP9	A81,A190,A192	3	act_site	98.42	queried	CYS,HIS,GLU
+Q4ZZI0		0	none		no_act_site	
+Q54NK8		0	none		no_act_site	
+Q5BC23		0	none		no_act_site	
+Q5D8V5	A18,A19,A20,A46,A47,A48	6	act_site+binding	89.19	queried	GLY,ASP,GLU,GLY,HIS,THR
+Q5GXV1	A47	1	act_site	94.19	motif_too_small	ASP
+Q5HNU6		0	none		no_act_site	
+Q5HRI7		0	none		no_act_site	
+Q5LYY7	A36,A126,A128,A130,A162,A174	6	act_site+binding	94.3	queried	ASP,GLY,SER,SER,GLU,ASP
+Q5PFN3		0	none		no_act_site	
+Q5XIE6		0	none		no_act_site	
+Q5YTI1	A103,A134,A135,A136,A167,A192	6	act_site+binding	95.08	queried	ARG,VAL,GLY,ASN,ARG,HIS
+Q62H08	A96,A99,A122	3	act_site	98.6	queried	ARG,GLU,SER
+Q634C4		0	none		no_act_site	
+Q65MR2	A83,A84,A112,A114,A169,A309	6	act_site+binding	93.45	queried	SER,LEU,GLU,LYS,GLU,LYS
+Q65PD0		0	none		no_act_site	
+Q65PH9		0	none		no_act_site	
+Q6A6G1		0	none		no_act_site	
+Q6C662		0	none		no_act_site	
+Q6ERS0	A21,A22,A40,A134	4	act_site+binding	67.39	low_plddt	ASN,PHE,LYS,ASP
+Q6GDC0		0	none		no_act_site	
+Q6GGZ4		0	none		no_act_site	
+Q6HBX6		0	none		no_act_site	
+Q6LNB8		0	none		no_act_site	
+Q71QI4	A67,A112,A206	3	act_site	92.93	queried	HIS,ASP,SER
+Q759Y5	A206,A217	2	act_site+binding	77.5	motif_too_small	LYS,THR
+Q75A64		0	none		no_act_site	
+Q75PL7		0	none		no_act_site	
+Q7A0I6		0	none		no_act_site	
+Q7MLE6		0	none		no_act_site	
+Q7MYS8	A129	1	act_site	98.25	motif_too_small	TYR
+Q7NJA4		0	none		no_act_site	
+Q7S7L7		0	none		no_act_site	
+Q7W275		0	none		no_act_site	
+Q7WCU0		0	none		no_act_site	
+Q7WKR5		0	none		no_act_site	
+Q86KC1	A24,A112,A114	3	act_site	98.77	queried	ASP,ASP,GLU
+Q87M24		0	none		no_act_site	
+Q87VA0		0	none		no_act_site	
+Q8CZD8		0	none		no_act_site	
+Q8D3J3		0	none		no_act_site	
+Q8E0H0	A10,A12,A96,A168,A214,A235	6	act_site+binding	96.64	queried	ASN,LYS,HIS,GLU,SER,GLY
+Q8E6F5	A283,A381,A408	3	act_site+binding	95.41	queried	GLN,ASP,CYS
+Q8ENX2	A75,A76,A77,A216,A225,A226	6	act_site+binding	86.69	queried	CYS,GLY,ASN,GLU,CYS,GLY
+Q8FIS3		0	none		no_act_site	
+Q8FL03		0	none		no_act_site	
+Q8I4V8		0	none		no_act_site	
+Q8LQJ9	A482,A483,A486,A560	4	act_site+binding	96.33	queried	HIS,GLU,HIS,ASP
+Q8RFY9		0	none		no_act_site	
+Q8SEW8		0	none		no_act_site	
+Q8Z6R2	A12,A170,A197,A200,A278,A279	6	act_site+binding	98.75	queried	HIS,GLY,HIS,GLU,ASP,ASP
+Q8Z9H0		0	none		no_act_site	
+Q928B5		0	none		no_act_site	
+Q92RJ1		0	none		no_act_site	
+Q93A44	A375,A469,A601,A650	4	act_site+binding	92.69	queried	LYS,ARG,TYR,MET
+Q96GJ1	A323,A423,A451,A497	4	act_site+binding	92.22	queried	GLN,ASN,CYS,GLU
+Q97K95	A268	1	act_site	89.25	motif_too_small	ARG
+Q985P4	A419,A472	2	act_site	96.47	motif_too_small	ASP,GLU
+Q988B8		0	none		no_act_site	
+Q98KA5		0	none		no_act_site	
+Q99V09		0	none		no_act_site	
+Q9AFC7		0	none		no_act_site	
+Q9AKQ3	A47,A135,A163,A205	4	act_site+binding	98.62	queried	THR,TYR,LYS,THR
+Q9CIV8	A55,A56,A57,A58,A106,A220	6	act_site+binding	97.27	queried	GLY,SER,GLY,HIS,LYS,HIS
+Q9CQU8	A40,A83	2	act_site	94.78	motif_too_small	SER,LYS
+Q9HQU4	A260,A312,A313,A315,A398,A411	6	act_site+binding	87.17	queried	ASP,GLY,SER,CYS,MET,ARG
+Q9HX95	A125	1	act_site	98.0	motif_too_small	ASP
+Q9I7C0	A9,A10,A11,A52,A54,A103	6	act_site+binding	98.36	queried	ASP,ARG,ASP,THR,GLN,LYS
+Q9KAD7	A410,A436	2	act_site+binding	98.91	motif_too_small	GLU,PHE
+Q9LZX6	A108,A194,A222,A261	4	act_site+binding	98.88	queried	THR,TYR,LYS,ILE
+Q9NH48		0	none		no_act_site	
+Q9PBC0		0	none		no_act_site	
+Q9PCG4	A116,A251,A281	3	act_site	98.65	queried	CYS,HIS,ASN
+Q9S2F4		0	none		no_act_site	
+Q9XG81	A62,A64,A86,A87	4	act_site+binding	98.67	queried	TYR,GLY,HIS,ASP
+Q9YBK2		0	none		no_act_site	
+S0E2Y4		0	none		no_act_site	
+W8CV45	A44,A80,A114,A257	4	act_site+binding	94.03	queried	ARG,LYS,ASP,ASN

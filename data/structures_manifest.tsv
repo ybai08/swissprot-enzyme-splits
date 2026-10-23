@@ -1,0 +1,301 @@
+accession	structure_source	status	structure_path	af_entry_id	af_version	af_global_plddt	plddt_mean	frac_plddt_lt50	frac_plddt_lt70	act_site_plddt	seq_matches_uniprot	n_residues_model	msa_url	notes
+A0A031WDE4	AlphaFoldDB	ok	data/structures/A0A031WDE4.pdb	AF-A0A031WDE4-F1	6	96.38	96.35	0.0	0.004	91.91	True	789	https://alphafold.ebi.ac.uk/files/msa/AF-A0A031WDE4-F1-msa_v6.a3m	
+A0A0H3DN66	AlphaFoldDB	ok	data/structures/A0A0H3DN66.pdb	AF-A0A0H3DN66-F1	6	93.44	93.43	0.007	0.016		True	307	https://alphafold.ebi.ac.uk/files/msa/AF-A0A0H3DN66-F1-msa_v6.a3m	
+A0A0R3K2G2	AlphaFoldDB	ok	data/structures/A0A0R3K2G2.pdb	AF-A0A0R3K2G2-F1	6	96.31	96.31	0.0	0.012	97.88	True	480	https://alphafold.ebi.ac.uk/files/msa/AF-A0A0R3K2G2-F1-msa_v6.a3m	
+A0A1L7VEQ6	AlphaFoldDB	ok	data/structures/A0A1L7VEQ6.pdb	AF-A0A1L7VEQ6-F1	6	92.19	92.2	0.006	0.025		True	526	https://alphafold.ebi.ac.uk/files/msa/AF-A0A1L7VEQ6-F1-msa_v6.a3m	
+A0A2Z5XAK6	AlphaFoldDB	ok	data/structures/A0A2Z5XAK6.pdb	AF-A0A2Z5XAK6-F1	6	93.56	93.53	0.011	0.019		True	366	https://alphafold.ebi.ac.uk/files/msa/AF-A0A2Z5XAK6-F1-msa_v6.a3m	
+A0M3K8	AlphaFoldDB	ok	data/structures/A0M3K8.pdb	AF-A0M3K8-F1	6	93.25	93.26	0.033	0.049		True	450	https://alphafold.ebi.ac.uk/files/msa/AF-A0M3K8-F1-msa_v6.a3m	
+A1A2E8	AlphaFoldDB	ok	data/structures/A1A2E8.pdb	AF-A1A2E8-F1	6	92.69	92.68	0.017	0.031		True	521	https://alphafold.ebi.ac.uk/files/msa/AF-A1A2E8-F1-msa_v6.a3m	
+A1AH96	AlphaFoldDB	ok	data/structures/A1AH96.pdb	AF-A1AH96-F1	6	97.44	97.42	0.0	0.003	96.73	True	324	https://alphafold.ebi.ac.uk/files/msa/AF-A1AH96-F1-msa_v6.a3m	
+A1B0M2	AlphaFoldDB	ok	data/structures/A1B0M2.pdb	AF-A1B0M2-F1	6	94.94	94.97	0.0	0.002		True	648	https://alphafold.ebi.ac.uk/files/msa/AF-A1B0M2-F1-msa_v6.a3m	
+A1B9Q2	AlphaFoldDB	ok	data/structures/A1B9Q2.pdb	AF-A1B9Q2-F1	6	94.62	94.6	0.006	0.026	95.47	True	154	https://alphafold.ebi.ac.uk/files/msa/AF-A1B9Q2-F1-msa_v6.a3m	
+A1CAX3	AlphaFoldDB	ok	data/structures/A1CAX3.pdb	AF-A1CAX3-F1	6	90.31	90.34	0.072	0.111	97.5	True	415	https://alphafold.ebi.ac.uk/files/msa/AF-A1CAX3-F1-msa_v6.a3m	
+A1JSF0	AlphaFoldDB	ok	data/structures/A1JSF0.pdb	AF-A1JSF0-F1	6	88.44	88.47	0.007	0.101	95.69	True	278	https://alphafold.ebi.ac.uk/files/msa/AF-A1JSF0-F1-msa_v6.a3m	
+A1RPV7	AlphaFoldDB	ok	data/structures/A1RPV7.pdb	AF-A1RPV7-F1	6	95.44	95.44	0.002	0.007		True	573	https://alphafold.ebi.ac.uk/files/msa/AF-A1RPV7-F1-msa_v6.a3m	
+A1UHL4	AlphaFoldDB	ok	data/structures/A1UHL4.pdb	AF-A1UHL4-F1	6	93.06	93.06	0.033	0.056		True	337	https://alphafold.ebi.ac.uk/files/msa/AF-A1UHL4-F1-msa_v6.a3m	
+A1URN4	AlphaFoldDB	ok	data/structures/A1URN4.pdb	AF-A1URN4-F1	6	83.19	83.17	0.08	0.189		True	339	https://alphafold.ebi.ac.uk/files/msa/AF-A1URN4-F1-msa_v6.a3m	
+A1VFZ7	AlphaFoldDB	ok	data/structures/A1VFZ7.pdb	AF-A1VFZ7-F1	6	97.0	96.97	0.008	0.013		True	479	https://alphafold.ebi.ac.uk/files/msa/AF-A1VFZ7-F1-msa_v6.a3m	
+A2QX25	AlphaFoldDB	ok	data/structures/A2QX25.pdb	AF-A2QX25-F1	6	86.06	86.04	0.112	0.161		True	249	https://alphafold.ebi.ac.uk/files/msa/AF-A2QX25-F1-msa_v6.a3m	
+A3MT41	AlphaFoldDB	ok	data/structures/A3MT41.pdb	AF-A3MT41-F1	6	97.06	97.04	0.0	0.0	98.12	True	351	https://alphafold.ebi.ac.uk/files/msa/AF-A3MT41-F1-msa_v6.a3m	
+A3NYW6	AlphaFoldDB	ok	data/structures/A3NYW6.pdb	AF-A3NYW6-F1	6	95.12	95.13	0.009	0.043		True	351	https://alphafold.ebi.ac.uk/files/msa/AF-A3NYW6-F1-msa_v6.a3m	
+A4G5V5	AlphaFoldDB	ok	data/structures/A4G5V5.pdb	AF-A4G5V5-F1	6	92.25	92.25	0.022	0.051	96.44	True	137	https://alphafold.ebi.ac.uk/files/msa/AF-A4G5V5-F1-msa_v6.a3m	
+A4IQD8	AlphaFoldDB	ok	data/structures/A4IQD8.pdb	AF-A4IQD8-F1	6	94.94	94.91	0.004	0.015		True	262	https://alphafold.ebi.ac.uk/files/msa/AF-A4IQD8-F1-msa_v6.a3m	
+A4QCP0	AlphaFoldDB	ok	data/structures/A4QCP0.pdb	AF-A4QCP0-F1	6	93.69	93.67	0.017	0.061		True	293	https://alphafold.ebi.ac.uk/files/msa/AF-A4QCP0-F1-msa_v6.a3m	
+A4R8G3	AlphaFoldDB	ok	data/structures/A4R8G3.pdb	AF-A4R8G3-F1	6	74.69	74.7	0.249	0.306		True	579	https://alphafold.ebi.ac.uk/files/msa/AF-A4R8G3-F1-msa_v6.a3m	
+A4SFN5	AlphaFoldDB	ok	data/structures/A4SFN5.pdb	AF-A4SFN5-F1	6	85.75	85.75	0.01	0.093		True	605	https://alphafold.ebi.ac.uk/files/msa/AF-A4SFN5-F1-msa_v6.a3m	
+A4SPR3	AlphaFoldDB	ok	data/structures/A4SPR3.pdb	AF-A4SPR3-F1	6	85.44	85.41	0.079	0.128	96.31	True	290	https://alphafold.ebi.ac.uk/files/msa/AF-A4SPR3-F1-msa_v6.a3m	
+A4TM39	AlphaFoldDB	ok	data/structures/A4TM39.pdb	AF-A4TM39-F1	6	95.62	95.6	0.0	0.01		True	197	https://alphafold.ebi.ac.uk/files/msa/AF-A4TM39-F1-msa_v6.a3m	
+A4TPM1	AlphaFoldDB	ok	data/structures/A4TPM1.pdb	AF-A4TPM1-F1	6	97.81	97.79	0.0	0.005		True	193	https://alphafold.ebi.ac.uk/files/msa/AF-A4TPM1-F1-msa_v6.a3m	
+A4VLR0	AlphaFoldDB	ok	data/structures/A4VLR0.pdb	AF-A4VLR0-F1	6	94.19	94.2	0.007	0.053		True	151	https://alphafold.ebi.ac.uk/files/msa/AF-A4VLR0-F1-msa_v6.a3m	
+A4W5N8	AlphaFoldDB	ok	data/structures/A4W5N8.pdb	AF-A4W5N8-F1	6	90.69	90.66	0.037	0.042		True	547	https://alphafold.ebi.ac.uk/files/msa/AF-A4W5N8-F1-msa_v6.a3m	
+A4W9M7	AlphaFoldDB	ok	data/structures/A4W9M7.pdb	AF-A4W9M7-F1	6	94.5	94.52	0.0	0.009		True	327	https://alphafold.ebi.ac.uk/files/msa/AF-A4W9M7-F1-msa_v6.a3m	
+A4YND6	AlphaFoldDB	ok	data/structures/A4YND6.pdb	AF-A4YND6-F1	6	95.75	95.77	0.0	0.007		True	279	https://alphafold.ebi.ac.uk/files/msa/AF-A4YND6-F1-msa_v6.a3m	
+A5CEC9	AlphaFoldDB	ok	data/structures/A5CEC9.pdb	AF-A5CEC9-F1	6	93.06	93.09	0.002	0.021		True	486	https://alphafold.ebi.ac.uk/files/msa/AF-A5CEC9-F1-msa_v6.a3m	
+A5E1A0	AlphaFoldDB	ok	data/structures/A5E1A0.pdb	AF-A5E1A0-F1	6	93.38	93.37	0.0	0.033	95.75	True	182	https://alphafold.ebi.ac.uk/files/msa/AF-A5E1A0-F1-msa_v6.a3m	
+A5FK68	AlphaFoldDB	ok	data/structures/A5FK68.pdb	AF-A5FK68-F1	6	94.56	94.57	0.015	0.03		True	534	https://alphafold.ebi.ac.uk/files/msa/AF-A5FK68-F1-msa_v6.a3m	
+A5HAK0	AlphaFoldDB	ok	data/structures/A5HAK0.pdb	AF-A5HAK0-F1	6	92.19	92.16	0.0	0.121	98.47	True	149	https://alphafold.ebi.ac.uk/files/msa/AF-A5HAK0-F1-msa_v6.a3m	
+A6QC00	AlphaFoldDB	ok	data/structures/A6QC00.pdb	AF-A6QC00-F1	6	93.56	93.59	0.007	0.054		True	294	https://alphafold.ebi.ac.uk/files/msa/AF-A6QC00-F1-msa_v6.a3m	
+A6U8Q2	AlphaFoldDB	ok	data/structures/A6U8Q2.pdb	AF-A6U8Q2-F1	6	87.44	87.46	0.092	0.1		True	491	https://alphafold.ebi.ac.uk/files/msa/AF-A6U8Q2-F1-msa_v6.a3m	
+A6UB24	AlphaFoldDB	ok	data/structures/A6UB24.pdb	AF-A6UB24-F1	6	97.44	97.43	0.0	0.0	96.19	True	264	https://alphafold.ebi.ac.uk/files/msa/AF-A6UB24-F1-msa_v6.a3m	
+A6V4H5	AlphaFoldDB	ok	data/structures/A6V4H5.pdb	AF-A6V4H5-F1	6	97.12	97.11	0.0	0.002		True	426	https://alphafold.ebi.ac.uk/files/msa/AF-A6V4H5-F1-msa_v6.a3m	
+A6V9K1	AlphaFoldDB	ok	data/structures/A6V9K1.pdb	AF-A6V9K1-F1	6	96.81	96.82	0.0	0.0		True	236	https://alphafold.ebi.ac.uk/files/msa/AF-A6V9K1-F1-msa_v6.a3m	
+A6VM79	AlphaFoldDB	ok	data/structures/A6VM79.pdb	AF-A6VM79-F1	6	92.62	92.62	0.009	0.031		True	320	https://alphafold.ebi.ac.uk/files/msa/AF-A6VM79-F1-msa_v6.a3m	
+A6WHB7	AlphaFoldDB	ok	data/structures/A6WHB7.pdb	AF-A6WHB7-F1	6	96.12	96.14	0.0	0.003	98.38	True	302	https://alphafold.ebi.ac.uk/files/msa/AF-A6WHB7-F1-msa_v6.a3m	
+A7IAS7	AlphaFoldDB	ok	data/structures/A7IAS7.pdb	AF-A7IAS7-F1	6	95.25	95.27	0.0	0.016		True	248	https://alphafold.ebi.ac.uk/files/msa/AF-A7IAS7-F1-msa_v6.a3m	
+A7MNE5	AlphaFoldDB	ok	data/structures/A7MNE5.pdb	AF-A7MNE5-F1	6	97.12	97.14	0.0	0.005		True	382	https://alphafold.ebi.ac.uk/files/msa/AF-A7MNE5-F1-msa_v6.a3m	
+A7NBA0	AlphaFoldDB	ok	data/structures/A7NBA0.pdb	AF-A7NBA0-F1	6	96.44	96.47	0.013	0.031	98.81	True	224	https://alphafold.ebi.ac.uk/files/msa/AF-A7NBA0-F1-msa_v6.a3m	
+A7X4T7	AlphaFoldDB	ok	data/structures/A7X4T7.pdb	AF-A7X4T7-F1	6	97.38	97.37	0.0	0.0	98.56	True	146	https://alphafold.ebi.ac.uk/files/msa/AF-A7X4T7-F1-msa_v6.a3m	
+A7ZTJ1	AlphaFoldDB	ok	data/structures/A7ZTJ1.pdb	AF-A7ZTJ1-F1	6	97.5	97.52	0.0	0.0		True	151	https://alphafold.ebi.ac.uk/files/msa/AF-A7ZTJ1-F1-msa_v6.a3m	
+A7ZWC9	AlphaFoldDB	ok	data/structures/A7ZWC9.pdb	AF-A7ZWC9-F1	6	95.44	95.42	0.0	0.015		True	198	https://alphafold.ebi.ac.uk/files/msa/AF-A7ZWC9-F1-msa_v6.a3m	
+A8GC40	AlphaFoldDB	ok	data/structures/A8GC40.pdb	AF-A8GC40-F1	6	95.44	95.41	0.014	0.028		True	213	https://alphafold.ebi.ac.uk/files/msa/AF-A8GC40-F1-msa_v6.a3m	
+A8GYI2	AlphaFoldDB	ok	data/structures/A8GYI2.pdb	AF-A8GYI2-F1	6	96.75	96.78	0.0	0.0	97.38	True	271	https://alphafold.ebi.ac.uk/files/msa/AF-A8GYI2-F1-msa_v6.a3m	
+A8H3V4	AlphaFoldDB	ok	data/structures/A8H3V4.pdb	AF-A8H3V4-F1	6	95.5	95.49	0.014	0.019		True	211	https://alphafold.ebi.ac.uk/files/msa/AF-A8H3V4-F1-msa_v6.a3m	
+A8HAG5	AlphaFoldDB	ok	data/structures/A8HAG5.pdb	AF-A8HAG5-F1	6	93.06	93.05	0.004	0.008		True	513	https://alphafold.ebi.ac.uk/files/msa/AF-A8HAG5-F1-msa_v6.a3m	
+A8LIV0	AlphaFoldDB	ok	data/structures/A8LIV0.pdb	AF-A8LIV0-F1	6	93.25	93.25	0.006	0.024		True	164	https://alphafold.ebi.ac.uk/files/msa/AF-A8LIV0-F1-msa_v6.a3m	
+A8P5H7	AlphaFoldDB	ok	data/structures/A8P5H7.pdb	AF-A8P5H7-F1	6	96.44	96.44	0.006	0.01		True	622	https://alphafold.ebi.ac.uk/files/msa/AF-A8P5H7-F1-msa_v6.a3m	
+A8Z4Y6	AlphaFoldDB	ok	data/structures/A8Z4Y6.pdb	AF-A8Z4Y6-F1	6	93.06	93.05	0.0	0.051		True	356	https://alphafold.ebi.ac.uk/files/msa/AF-A8Z4Y6-F1-msa_v6.a3m	
+A9MZL6	AlphaFoldDB	ok	data/structures/A9MZL6.pdb	AF-A9MZL6-F1	6	92.25	92.25	0.0	0.05		True	360	https://alphafold.ebi.ac.uk/files/msa/AF-A9MZL6-F1-msa_v6.a3m	
+A9R4F6	AlphaFoldDB	ok	data/structures/A9R4F6.pdb	AF-A9R4F6-F1	6	96.69	96.66	0.0	0.008		True	387	https://alphafold.ebi.ac.uk/files/msa/AF-A9R4F6-F1-msa_v6.a3m	
+A9SCJ6	AlphaFoldDB	ok	data/structures/A9SCJ6.pdb	AF-A9SCJ6-F1	6	92.62	92.65	0.025	0.103		True	203	https://alphafold.ebi.ac.uk/files/msa/AF-A9SCJ6-F1-msa_v6.a3m	
+A9VFM1	AlphaFoldDB	ok	data/structures/A9VFM1.pdb	AF-A9VFM1-F1	6	84.69	84.71	0.043	0.086	87.62	True	697	https://alphafold.ebi.ac.uk/files/msa/AF-A9VFM1-F1-msa_v6.a3m	
+B0BB97	AlphaFoldDB	ok	data/structures/B0BB97.pdb	AF-B0BB97-F1	6	92.38	92.35	0.022	0.035		True	544	https://alphafold.ebi.ac.uk/files/msa/AF-B0BB97-F1-msa_v6.a3m	
+B0BSH8	AlphaFoldDB	ok	data/structures/B0BSH8.pdb	AF-B0BSH8-F1	6	95.44	95.46	0.0	0.005		True	568	https://alphafold.ebi.ac.uk/files/msa/AF-B0BSH8-F1-msa_v6.a3m	
+B0JFY2	AlphaFoldDB	ok	data/structures/B0JFY2.pdb	AF-B0JFY2-F1	6	87.44	87.46	0.055	0.092		True	379	https://alphafold.ebi.ac.uk/files/msa/AF-B0JFY2-F1-msa_v6.a3m	
+B0SHG0	AlphaFoldDB	ok	data/structures/B0SHG0.pdb	AF-B0SHG0-F1	6	92.75	92.74	0.017	0.044		True	343	https://alphafold.ebi.ac.uk/files/msa/AF-B0SHG0-F1-msa_v6.a3m	
+B0TM56	AlphaFoldDB	ok	data/structures/B0TM56.pdb	AF-B0TM56-F1	6	98.25	98.24	0.0	0.002	98.44	True	554	https://alphafold.ebi.ac.uk/files/msa/AF-B0TM56-F1-msa_v6.a3m	
+B0U1H6	AlphaFoldDB	ok	data/structures/B0U1H6.pdb	AF-B0U1H6-F1	6	94.25	94.25	0.0	0.025		True	628	https://alphafold.ebi.ac.uk/files/msa/AF-B0U1H6-F1-msa_v6.a3m	
+B0UU27	AlphaFoldDB	ok	data/structures/B0UU27.pdb	AF-B0UU27-F1	6	96.81	96.8	0.0	0.0	91.78	True	270	https://alphafold.ebi.ac.uk/files/msa/AF-B0UU27-F1-msa_v6.a3m	
+B0V8M8	AlphaFoldDB	ok	data/structures/B0V8M8.pdb	AF-B0V8M8-F1	6	93.38	93.38	0.011	0.044		True	180	https://alphafold.ebi.ac.uk/files/msa/AF-B0V8M8-F1-msa_v6.a3m	
+B0VBN5	AlphaFoldDB	ok	data/structures/B0VBN5.pdb	AF-B0VBN5-F1	6	93.81	93.8	0.007	0.022		True	596	https://alphafold.ebi.ac.uk/files/msa/AF-B0VBN5-F1-msa_v6.a3m	
+B0VND0	AlphaFoldDB	ok	data/structures/B0VND0.pdb	AF-B0VND0-F1	6	94.31	94.32	0.008	0.013	98.0	True	383	https://alphafold.ebi.ac.uk/files/msa/AF-B0VND0-F1-msa_v6.a3m	
+B0Y9Q9	AlphaFoldDB	ok	data/structures/B0Y9Q9.pdb	AF-B0Y9Q9-F1	6	72.81	72.81	0.278	0.373	97.69	True	565	https://alphafold.ebi.ac.uk/files/msa/AF-B0Y9Q9-F1-msa_v6.a3m	
+B1NTR4	AlphaFoldDB	ok	data/structures/B1NTR4.pdb	AF-B1NTR4-F1	6	87.81	87.81	0.045	0.108		True	510	https://alphafold.ebi.ac.uk/files/msa/AF-B1NTR4-F1-msa_v6.a3m	
+B1VXU2	AlphaFoldDB	ok	data/structures/B1VXU2.pdb	AF-B1VXU2-F1	6	93.56	93.55	0.019	0.038		True	312	https://alphafold.ebi.ac.uk/files/msa/AF-B1VXU2-F1-msa_v6.a3m	
+B2I6L3	AlphaFoldDB	ok	data/structures/B2I6L3.pdb	AF-B2I6L3-F1	6	97.56	97.54	0.0	0.0	98.62	True	491	https://alphafold.ebi.ac.uk/files/msa/AF-B2I6L3-F1-msa_v6.a3m	
+B2I9J3	AlphaFoldDB	ok	data/structures/B2I9J3.pdb	AF-B2I9J3-F1	6	92.56	92.57	0.03	0.049	94.28	True	268	https://alphafold.ebi.ac.uk/files/msa/AF-B2I9J3-F1-msa_v6.a3m	
+B2IIK7	AlphaFoldDB	ok	data/structures/B2IIK7.pdb	AF-B2IIK7-F1	6	82.25	82.27	0.098	0.244		True	205	https://alphafold.ebi.ac.uk/files/msa/AF-B2IIK7-F1-msa_v6.a3m	
+B2IYE4	AlphaFoldDB	ok	data/structures/B2IYE4.pdb	AF-B2IYE4-F1	6	97.0	97.02	0.0	0.002	96.0	True	426	https://alphafold.ebi.ac.uk/files/msa/AF-B2IYE4-F1-msa_v6.a3m	
+B2J9T1	AlphaFoldDB	ok	data/structures/B2J9T1.pdb	AF-B2J9T1-F1	6	95.0	94.99	0.016	0.031	93.22	True	127	https://alphafold.ebi.ac.uk/files/msa/AF-B2J9T1-F1-msa_v6.a3m	
+B2JCV1	AlphaFoldDB	ok	data/structures/B2JCV1.pdb	AF-B2JCV1-F1	6	80.94	80.93	0.006	0.167	80.0	True	527	https://alphafold.ebi.ac.uk/files/msa/AF-B2JCV1-F1-msa_v6.a3m	
+B2KB05	AlphaFoldDB	ok	data/structures/B2KB05.pdb	AF-B2KB05-F1	6	92.81	92.81	0.002	0.024		True	835	https://alphafold.ebi.ac.uk/files/msa/AF-B2KB05-F1-msa_v6.a3m	
+B2KE80	AlphaFoldDB	ok	data/structures/B2KE80.pdb	AF-B2KE80-F1	6	92.75	92.74	0.004	0.028		True	472	https://alphafold.ebi.ac.uk/files/msa/AF-B2KE80-F1-msa_v6.a3m	
+B2SXN2	AlphaFoldDB	ok	data/structures/B2SXN2.pdb	AF-B2SXN2-F1	6	97.44	97.47	0.0	0.006		True	164	https://alphafold.ebi.ac.uk/files/msa/AF-B2SXN2-F1-msa_v6.a3m	
+B2TUP1	AlphaFoldDB	ok	data/structures/B2TUP1.pdb	AF-B2TUP1-F1	6	93.5	93.51	0.002	0.006		True	513	https://alphafold.ebi.ac.uk/files/msa/AF-B2TUP1-F1-msa_v6.a3m	
+B3EPH5	AlphaFoldDB	ok	data/structures/B3EPH5.pdb	AF-B3EPH5-F1	6	96.12	96.13	0.0	0.016	97.69	True	250	https://alphafold.ebi.ac.uk/files/msa/AF-B3EPH5-F1-msa_v6.a3m	
+B3H011	AlphaFoldDB	ok	data/structures/B3H011.pdb	AF-B3H011-F1	6	83.69	83.68	0.011	0.17		True	348	https://alphafold.ebi.ac.uk/files/msa/AF-B3H011-F1-msa_v6.a3m	
+B3H1Y9	AlphaFoldDB	ok	data/structures/B3H1Y9.pdb	AF-B3H1Y9-F1	6	96.5	96.52	0.0	0.006		True	169	https://alphafold.ebi.ac.uk/files/msa/AF-B3H1Y9-F1-msa_v6.a3m	
+B3PBR1	AlphaFoldDB	ok	data/structures/B3PBR1.pdb	AF-B3PBR1-F1	6	92.69	92.71	0.018	0.044		True	384	https://alphafold.ebi.ac.uk/files/msa/AF-B3PBR1-F1-msa_v6.a3m	
+B4S9G0	AlphaFoldDB	ok	data/structures/B4S9G0.pdb	AF-B4S9G0-F1	6	94.0	93.98	0.0	0.032	94.88	True	251	https://alphafold.ebi.ac.uk/files/msa/AF-B4S9G0-F1-msa_v6.a3m	
+B4SRY6	AlphaFoldDB	ok	data/structures/B4SRY6.pdb	AF-B4SRY6-F1	6	97.5	97.49	0.0	0.0	96.97	True	126	https://alphafold.ebi.ac.uk/files/msa/AF-B4SRY6-F1-msa_v6.a3m	
+B4SXE4	AlphaFoldDB	ok	data/structures/B4SXE4.pdb	AF-B4SXE4-F1	6	96.12	96.11	0.0	0.008		True	238	https://alphafold.ebi.ac.uk/files/msa/AF-B4SXE4-F1-msa_v6.a3m	
+B4TUC3	AlphaFoldDB	ok	data/structures/B4TUC3.pdb	AF-B4TUC3-F1	6	97.25	97.27	0.002	0.01	97.94	True	492	https://alphafold.ebi.ac.uk/files/msa/AF-B4TUC3-F1-msa_v6.a3m	
+B5BA65	AlphaFoldDB	ok	data/structures/B5BA65.pdb	AF-B5BA65-F1	6	96.06	96.08	0.0	0.0		True	275	https://alphafold.ebi.ac.uk/files/msa/AF-B5BA65-F1-msa_v6.a3m	
+B5EHA7	AlphaFoldDB	ok	data/structures/B5EHA7.pdb	AF-B5EHA7-F1	6	95.5	95.5	0.0	0.011	95.25	True	454	https://alphafold.ebi.ac.uk/files/msa/AF-B5EHA7-F1-msa_v6.a3m	
+B5RC85	AlphaFoldDB	ok	data/structures/B5RC85.pdb	AF-B5RC85-F1	6	96.81	96.8	0.016	0.039		True	828	https://alphafold.ebi.ac.uk/files/msa/AF-B5RC85-F1-msa_v6.a3m	
+B5XJH3	AlphaFoldDB	ok	data/structures/B5XJH3.pdb	AF-B5XJH3-F1	6	92.06	92.08	0.002	0.008		True	591	https://alphafold.ebi.ac.uk/files/msa/AF-B5XJH3-F1-msa_v6.a3m	
+B5XU88	AlphaFoldDB	ok	data/structures/B5XU88.pdb	AF-B5XU88-F1	6	90.38	90.4	0.089	0.103		True	360	https://alphafold.ebi.ac.uk/files/msa/AF-B5XU88-F1-msa_v6.a3m	
+B6EHK0	AlphaFoldDB	ok	data/structures/B6EHK0.pdb	AF-B6EHK0-F1	6	93.44	93.45	0.0	0.009		True	215	https://alphafold.ebi.ac.uk/files/msa/AF-B6EHK0-F1-msa_v6.a3m	
+B7GXT4	AlphaFoldDB	ok	data/structures/B7GXT4.pdb	AF-B7GXT4-F1	6	94.88	94.87	0.0	0.0		True	217	https://alphafold.ebi.ac.uk/files/msa/AF-B7GXT4-F1-msa_v6.a3m	
+B7HGZ9	AlphaFoldDB	ok	data/structures/B7HGZ9.pdb	AF-B7HGZ9-F1	6	96.25	96.28	0.0	0.004		True	253	https://alphafold.ebi.ac.uk/files/msa/AF-B7HGZ9-F1-msa_v6.a3m	
+B7JVH9	AlphaFoldDB	ok	data/structures/B7JVH9.pdb	AF-B7JVH9-F1	6	83.44	83.42	0.085	0.179		True	329	https://alphafold.ebi.ac.uk/files/msa/AF-B7JVH9-F1-msa_v6.a3m	
+B7K1R5	AlphaFoldDB	ok	data/structures/B7K1R5.pdb	AF-B7K1R5-F1	6	91.31	91.29	0.007	0.044	85.88	True	428	https://alphafold.ebi.ac.uk/files/msa/AF-B7K1R5-F1-msa_v6.a3m	
+B7LK20	AlphaFoldDB	ok	data/structures/B7LK20.pdb	AF-B7LK20-F1	6	96.44	96.41	0.0	0.005		True	442	https://alphafold.ebi.ac.uk/files/msa/AF-B7LK20-F1-msa_v6.a3m	
+B7MM49	AlphaFoldDB	ok	data/structures/B7MM49.pdb	AF-B7MM49-F1	6	97.88	97.85	0.0	0.0		True	278	https://alphafold.ebi.ac.uk/files/msa/AF-B7MM49-F1-msa_v6.a3m	
+B7N609	AlphaFoldDB	ok	data/structures/B7N609.pdb	AF-B7N609-F1	6	93.19	93.16	0.007	0.053		True	283	https://alphafold.ebi.ac.uk/files/msa/AF-B7N609-F1-msa_v6.a3m	
+B7NR34	AlphaFoldDB	ok	data/structures/B7NR34.pdb	AF-B7NR34-F1	6	89.94	89.92	0.0	0.011		True	460	https://alphafold.ebi.ac.uk/files/msa/AF-B7NR34-F1-msa_v6.a3m	
+B7VKE7	AlphaFoldDB	ok	data/structures/B7VKE7.pdb	AF-B7VKE7-F1	6	94.12	94.14	0.014	0.037	82.0	True	219	https://alphafold.ebi.ac.uk/files/msa/AF-B7VKE7-F1-msa_v6.a3m	
+B8CM22	AlphaFoldDB	ok	data/structures/B8CM22.pdb	AF-B8CM22-F1	6	96.44	96.42	0.0	0.004		True	237	https://alphafold.ebi.ac.uk/files/msa/AF-B8CM22-F1-msa_v6.a3m	
+B8E200	AlphaFoldDB	ok	data/structures/B8E200.pdb	AF-B8E200-F1	6	97.94	97.93	0.0	0.0	98.31	True	214	https://alphafold.ebi.ac.uk/files/msa/AF-B8E200-F1-msa_v6.a3m	
+B8GLE3	AlphaFoldDB	ok	data/structures/B8GLE3.pdb	AF-B8GLE3-F1	6	94.31	94.33	0.005	0.052		True	211	https://alphafold.ebi.ac.uk/files/msa/AF-B8GLE3-F1-msa_v6.a3m	
+B8JEX6	AlphaFoldDB	ok	data/structures/B8JEX6.pdb	AF-B8JEX6-F1	6	91.25	91.23	0.053	0.066		True	361	https://alphafold.ebi.ac.uk/files/msa/AF-B8JEX6-F1-msa_v6.a3m	
+B9DWF3	AlphaFoldDB	ok	data/structures/B9DWF3.pdb	AF-B9DWF3-F1	6	96.5	96.48	0.0	0.0		True	159	https://alphafold.ebi.ac.uk/files/msa/AF-B9DWF3-F1-msa_v6.a3m	
+B9MJX8	AlphaFoldDB	ok	data/structures/B9MJX8.pdb	AF-B9MJX8-F1	6	96.31	96.31	0.003	0.01	96.56	True	286	https://alphafold.ebi.ac.uk/files/msa/AF-B9MJX8-F1-msa_v6.a3m	
+C0MGG5	AlphaFoldDB	ok	data/structures/C0MGG5.pdb	AF-C0MGG5-F1	6	96.06	96.04	0.0	0.008	98.28	True	264	https://alphafold.ebi.ac.uk/files/msa/AF-C0MGG5-F1-msa_v6.a3m	
+C1CTD6	AlphaFoldDB	ok	data/structures/C1CTD6.pdb	AF-C1CTD6-F1	6	90.94	90.95	0.007	0.039		True	540	https://alphafold.ebi.ac.uk/files/msa/AF-C1CTD6-F1-msa_v6.a3m	
+C3LFG7	AlphaFoldDB	ok	data/structures/C3LFG7.pdb	AF-C3LFG7-F1	6	93.0	92.97	0.01	0.019		True	104	https://alphafold.ebi.ac.uk/files/msa/AF-C3LFG7-F1-msa_v6.a3m	
+C3MYD9	AlphaFoldDB	ok	data/structures/C3MYD9.pdb	AF-C3MYD9-F1	6	93.88	93.89	0.0	0.02		True	293	https://alphafold.ebi.ac.uk/files/msa/AF-C3MYD9-F1-msa_v6.a3m	
+C3P3F8	AlphaFoldDB	ok	data/structures/C3P3F8.pdb	AF-C3P3F8-F1	6	91.0	91.01	0.042	0.076		True	119	https://alphafold.ebi.ac.uk/files/msa/AF-C3P3F8-F1-msa_v6.a3m	
+C4L9Z3	AlphaFoldDB	ok	data/structures/C4L9Z3.pdb	AF-C4L9Z3-F1	6	93.44	93.42	0.014	0.042	93.22	True	283	https://alphafold.ebi.ac.uk/files/msa/AF-C4L9Z3-F1-msa_v6.a3m	
+C4ZY95	AlphaFoldDB	ok	data/structures/C4ZY95.pdb	AF-C4ZY95-F1	6	77.12	77.1	0.078	0.299		True	231	https://alphafold.ebi.ac.uk/files/msa/AF-C4ZY95-F1-msa_v6.a3m	
+C5BQX2	AlphaFoldDB	ok	data/structures/C5BQX2.pdb	AF-C5BQX2-F1	6	93.75	93.75	0.0	0.006		True	934	https://alphafold.ebi.ac.uk/files/msa/AF-C5BQX2-F1-msa_v6.a3m	
+C6A2P7	AlphaFoldDB	ok	data/structures/C6A2P7.pdb	AF-C6A2P7-F1	6	93.62	93.63	0.005	0.041		True	195	https://alphafold.ebi.ac.uk/files/msa/AF-C6A2P7-F1-msa_v6.a3m	
+C6E7R1	AlphaFoldDB	ok	data/structures/C6E7R1.pdb	AF-C6E7R1-F1	6	96.31	96.29	0.003	0.009	98.31	True	335	https://alphafold.ebi.ac.uk/files/msa/AF-C6E7R1-F1-msa_v6.a3m	
+C7Z9Z4	AlphaFoldDB	ok	data/structures/C7Z9Z4.pdb	AF-C7Z9Z4-F1	6	95.94	95.97	0.006	0.017		True	176	https://alphafold.ebi.ac.uk/files/msa/AF-C7Z9Z4-F1-msa_v6.a3m	
+D2NGI4	AlphaFoldDB	ok	data/structures/D2NGI4.pdb	AF-D2NGI4-F1	6	96.44	96.44	0.0	0.012		True	164	https://alphafold.ebi.ac.uk/files/msa/AF-D2NGI4-F1-msa_v6.a3m	
+D4DI84	AlphaFoldDB	ok	data/structures/D4DI84.pdb	AF-D4DI84-F1	6	91.38	91.39	0.063	0.074	98.81	True	271	https://alphafold.ebi.ac.uk/files/msa/AF-D4DI84-F1-msa_v6.a3m	
+D4GQU6	AlphaFoldDB	ok	data/structures/D4GQU6.pdb	AF-D4GQU6-F1	6	89.62	89.63	0.009	0.098		True	563	https://alphafold.ebi.ac.uk/files/msa/AF-D4GQU6-F1-msa_v6.a3m	
+D7E9E7	AlphaFoldDB	ok	data/structures/D7E9E7.pdb	AF-D7E9E7-F1	6	94.12	94.14	0.016	0.053		True	190	https://alphafold.ebi.ac.uk/files/msa/AF-D7E9E7-F1-msa_v6.a3m	
+E7LXI9		no_model												API HTTP 404
+G3XMB9	AlphaFoldDB	ok	data/structures/G3XMB9.pdb	AF-G3XMB9-F1	6	93.31	93.32	0.009	0.033		True	338	https://alphafold.ebi.ac.uk/files/msa/AF-G3XMB9-F1-msa_v6.a3m	
+O13966	AlphaFoldDB	ok	data/structures/O13966.pdb	AF-O13966-F1	6	93.75	93.75	0.042	0.053		True	789	https://alphafold.ebi.ac.uk/files/msa/AF-O13966-F1-msa_v6.a3m	
+O22184	AlphaFoldDB	ok	data/structures/O22184.pdb	AF-O22184-F1	6	83.06	83.06	0.138	0.174		True	596	https://alphafold.ebi.ac.uk/files/msa/AF-O22184-F1-msa_v6.a3m	
+O35493	AlphaFoldDB	ok	data/structures/O35493.pdb	AF-O35493-F1	6	79.0	79.02	0.277	0.289	97.44	True	481	https://alphafold.ebi.ac.uk/files/msa/AF-O35493-F1-msa_v6.a3m	
+O42376	AlphaFoldDB	ok	data/structures/O42376.pdb	AF-O42376-F1	6	88.81	88.8	0.052	0.096	87.75	True	363	https://alphafold.ebi.ac.uk/files/msa/AF-O42376-F1-msa_v6.a3m	
+O51121	AlphaFoldDB	ok	data/structures/O51121.pdb	AF-O51121-F1	6	93.19	93.19	0.002	0.003		True	575	https://alphafold.ebi.ac.uk/files/msa/AF-O51121-F1-msa_v6.a3m	
+O59314	AlphaFoldDB	ok	data/structures/O59314.pdb	AF-O59314-F1	6	94.38	94.39	0.014	0.018		True	570	https://alphafold.ebi.ac.uk/files/msa/AF-O59314-F1-msa_v6.a3m	
+O69913	AlphaFoldDB	ok	data/structures/O69913.pdb	AF-O69913-F1	6	90.06	90.04	0.051	0.091		True	253	https://alphafold.ebi.ac.uk/files/msa/AF-O69913-F1-msa_v6.a3m	
+O88763	AlphaFoldDB	ok	data/structures/O88763.pdb	AF-O88763-F1	6	83.62	83.64	0.073	0.153		True	887	https://alphafold.ebi.ac.uk/files/msa/AF-O88763-F1-msa_v6.a3m	
+P05302	AlphaFoldDB	ok	data/structures/P05302.pdb	AF-P05302-F1	6	88.38	88.36	0.077	0.14	68.81	True	415	https://alphafold.ebi.ac.uk/files/msa/AF-P05302-F1-msa_v6.a3m	
+P08791	AlphaFoldDB	ok	data/structures/P08791.pdb	AF-P08791-F1	6	96.56	96.55	0.0	0.0		True	363	https://alphafold.ebi.ac.uk/files/msa/AF-P08791-F1-msa_v6.a3m	
+P0AB84	AlphaFoldDB	ok	data/structures/P0AB84.pdb	AF-P0AB84-F1	6	97.06	97.09	0.0	0.005		True	211	https://alphafold.ebi.ac.uk/files/msa/AF-P0AB84-F1-msa_v6.a3m	
+P0ACD3	AlphaFoldDB	ok	data/structures/P0ACD3.pdb	AF-P0ACD3-F1	6	97.69	97.68	0.0	0.0		True	182	https://alphafold.ebi.ac.uk/files/msa/AF-P0ACD3-F1-msa_v6.a3m	
+P0C7K7	AlphaFoldDB	ok	data/structures/P0C7K7.pdb	AF-P0C7K7-F1	6	96.56	96.53	0.0	0.0	75.75	True	598	https://alphafold.ebi.ac.uk/files/msa/AF-P0C7K7-F1-msa_v6.a3m	
+P0CB61	AlphaFoldDB	ok	data/structures/P0CB61.pdb	AF-P0CB61-F1	6	94.31	94.32	0.0	0.006		True	930	https://alphafold.ebi.ac.uk/files/msa/AF-P0CB61-F1-msa_v6.a3m	
+P0CQ47	AlphaFoldDB	ok	data/structures/P0CQ47.pdb	AF-P0CQ47-F1	6	81.19	81.19	0.068	0.174		True	829	https://alphafold.ebi.ac.uk/files/msa/AF-P0CQ47-F1-msa_v6.a3m	
+P0DJL8	AlphaFoldDB	ok	data/structures/P0DJL8.pdb	AF-P0DJL8-F1	6	97.44	97.45	0.0	0.0	95.34	True	368	https://alphafold.ebi.ac.uk/files/msa/AF-P0DJL8-F1-msa_v6.a3m	
+P32946	AlphaFoldDB	ok	data/structures/P32946.pdb	AF-P32946-F1	6	95.69	95.7	0.018	0.035	98.58	True	548	https://alphafold.ebi.ac.uk/files/msa/AF-P32946-F1-msa_v6.a3m	
+P39411	AlphaFoldDB	ok	data/structures/P39411.pdb	AF-P39411-F1	6	97.0	97.02	0.0	0.0		True	170	https://alphafold.ebi.ac.uk/files/msa/AF-P39411-F1-msa_v6.a3m	
+P40999	AlphaFoldDB	ok	data/structures/P40999.pdb	AF-P40999-F1	6	90.94	90.94	0.036	0.094	63.47	True	330	https://alphafold.ebi.ac.uk/files/msa/AF-P40999-F1-msa_v6.a3m	
+P41571	AlphaFoldDB	ok	data/structures/P41571.pdb	AF-P41571-F1	6	90.81	90.79	0.055	0.082	95.81	True	526	https://alphafold.ebi.ac.uk/files/msa/AF-P41571-F1-msa_v6.a3m	
+P42439	AlphaFoldDB	ok	data/structures/P42439.pdb	AF-P42439-F1	6	91.94	91.92	0.003	0.008		True	396	https://alphafold.ebi.ac.uk/files/msa/AF-P42439-F1-msa_v6.a3m	
+P45181	AlphaFoldDB	ok	data/structures/P45181.pdb	AF-P45181-F1	6	91.88	91.9	0.024	0.037	97.88	True	926	https://alphafold.ebi.ac.uk/files/msa/AF-P45181-F1-msa_v6.a3m	
+P46852	AlphaFoldDB	ok	data/structures/P46852.pdb	AF-P46852-F1	6	97.81	97.8	0.0	0.0		True	231	https://alphafold.ebi.ac.uk/files/msa/AF-P46852-F1-msa_v6.a3m	
+P48455	AlphaFoldDB	ok	data/structures/P48455.pdb	AF-P48455-F1	6	85.44	85.42	0.074	0.177	98.38	True	513	https://alphafold.ebi.ac.uk/files/msa/AF-P48455-F1-msa_v6.a3m	
+P58350	AlphaFoldDB	ok	data/structures/P58350.pdb	AF-P58350-F1	6	96.56	96.58	0.007	0.022		True	410	https://alphafold.ebi.ac.uk/files/msa/AF-P58350-F1-msa_v6.a3m	
+P58619	AlphaFoldDB	ok	data/structures/P58619.pdb	AF-P58619-F1	6	96.25	96.24	0.0	0.009		True	323	https://alphafold.ebi.ac.uk/files/msa/AF-P58619-F1-msa_v6.a3m	
+P58866		no_model												API HTTP 404
+P66996	AlphaFoldDB	ok	data/structures/P66996.pdb	AF-P66996-F1	6	94.75	94.76	0.0	0.018		True	332	https://alphafold.ebi.ac.uk/files/msa/AF-P66996-F1-msa_v6.a3m	
+P74304	AlphaFoldDB	ok	data/structures/P74304.pdb	AF-P74304-F1	6	96.25	96.25	0.0	0.009	98.12	True	217	https://alphafold.ebi.ac.uk/files/msa/AF-P74304-F1-msa_v6.a3m	
+P75216	AlphaFoldDB	ok	data/structures/P75216.pdb	AF-P75216-F1	6	96.56	96.56	0.0	0.0		True	248	https://alphafold.ebi.ac.uk/files/msa/AF-P75216-F1-msa_v6.a3m	
+P76329	AlphaFoldDB	ok	data/structures/P76329.pdb	AF-P76329-F1	6	94.75	94.73	0.004	0.018	97.0	True	271	https://alphafold.ebi.ac.uk/files/msa/AF-P76329-F1-msa_v6.a3m	
+P77650	AlphaFoldDB	ok	data/structures/P77650.pdb	AF-P77650-F1	6	96.94	96.93	0.002	0.005		True	400	https://alphafold.ebi.ac.uk/files/msa/AF-P77650-F1-msa_v6.a3m	
+P77978	AlphaFoldDB	ok	data/structures/P77978.pdb	AF-P77978-F1	6	94.19	94.19	0.0	0.0		True	412	https://alphafold.ebi.ac.uk/files/msa/AF-P77978-F1-msa_v6.a3m	
+P78536	AlphaFoldDB	ok	data/structures/P78536.pdb	AF-P78536-F1	6	72.69	72.67	0.231	0.328	95.31	True	824	https://alphafold.ebi.ac.uk/files/msa/AF-P78536-F1-msa_v6.a3m	
+P80201	AlphaFoldDB	ok	data/structures/P80201.pdb	AF-P80201-F1	6	82.56	82.54	0.126	0.194	95.75	True	509	https://alphafold.ebi.ac.uk/files/msa/AF-P80201-F1-msa_v6.a3m	
+Q02Z29	AlphaFoldDB	ok	data/structures/Q02Z29.pdb	AF-Q02Z29-F1	6	95.44	95.46	0.0	0.005		True	197	https://alphafold.ebi.ac.uk/files/msa/AF-Q02Z29-F1-msa_v6.a3m	
+Q03NQ6	AlphaFoldDB	ok	data/structures/Q03NQ6.pdb	AF-Q03NQ6-F1	6	88.5	88.53	0.034	0.065		True	535	https://alphafold.ebi.ac.uk/files/msa/AF-Q03NQ6-F1-msa_v6.a3m	
+Q03W54	AlphaFoldDB	ok	data/structures/Q03W54.pdb	AF-Q03W54-F1	6	95.62	95.63	0.0	0.006	93.5	True	171	https://alphafold.ebi.ac.uk/files/msa/AF-Q03W54-F1-msa_v6.a3m	
+Q07103	AlphaFoldDB	ok	data/structures/Q07103.pdb	AF-Q07103-F1	6	96.5	96.5	0.027	0.032		True	375	https://alphafold.ebi.ac.uk/files/msa/AF-Q07103-F1-msa_v6.a3m	
+Q07NL5	AlphaFoldDB	ok	data/structures/Q07NL5.pdb	AF-Q07NL5-F1	6	92.5	92.47	0.0	0.012		True	162	https://alphafold.ebi.ac.uk/files/msa/AF-Q07NL5-F1-msa_v6.a3m	
+Q07ZQ7	AlphaFoldDB	ok	data/structures/Q07ZQ7.pdb	AF-Q07ZQ7-F1	6	94.12	94.12	0.0	0.011		True	364	https://alphafold.ebi.ac.uk/files/msa/AF-Q07ZQ7-F1-msa_v6.a3m	
+Q0AXM5	AlphaFoldDB	ok	data/structures/Q0AXM5.pdb	AF-Q0AXM5-F1	6	93.94	93.96	0.0	0.003	80.19	True	398	https://alphafold.ebi.ac.uk/files/msa/AF-Q0AXM5-F1-msa_v6.a3m	
+Q0C639	AlphaFoldDB	ok	data/structures/Q0C639.pdb	AF-Q0C639-F1	6	95.06	95.06	0.0	0.021	95.19	True	241	https://alphafold.ebi.ac.uk/files/msa/AF-Q0C639-F1-msa_v6.a3m	
+Q0HE67	AlphaFoldDB	ok	data/structures/Q0HE67.pdb	AF-Q0HE67-F1	6	96.5	96.49	0.015	0.015		True	474	https://alphafold.ebi.ac.uk/files/msa/AF-Q0HE67-F1-msa_v6.a3m	
+Q0HXV7	AlphaFoldDB	ok	data/structures/Q0HXV7.pdb	AF-Q0HXV7-F1	6	93.0	93.02	0.009	0.025		True	321	https://alphafold.ebi.ac.uk/files/msa/AF-Q0HXV7-F1-msa_v6.a3m	
+Q0V8B7	AlphaFoldDB	ok	data/structures/Q0V8B7.pdb	AF-Q0V8B7-F1	6	80.25	80.25	0.061	0.157		True	734	https://alphafold.ebi.ac.uk/files/msa/AF-Q0V8B7-F1-msa_v6.a3m	
+Q0VMA6	AlphaFoldDB	ok	data/structures/Q0VMA6.pdb	AF-Q0VMA6-F1	6	93.88	93.87	0.0	0.028	87.12	True	180	https://alphafold.ebi.ac.uk/files/msa/AF-Q0VMA6-F1-msa_v6.a3m	
+Q117D2	AlphaFoldDB	ok	data/structures/Q117D2.pdb	AF-Q117D2-F1	6	91.94	91.96	0.01	0.077	93.95	True	300	https://alphafold.ebi.ac.uk/files/msa/AF-Q117D2-F1-msa_v6.a3m	
+Q12001	AlphaFoldDB	ok	data/structures/Q12001.pdb	AF-Q12001-F1	6	91.81	91.81	0.022	0.083		True	544	https://alphafold.ebi.ac.uk/files/msa/AF-Q12001-F1-msa_v6.a3m	
+Q12F12	AlphaFoldDB	ok	data/structures/Q12F12.pdb	AF-Q12F12-F1	6	93.5	93.5	0.004	0.023		True	689	https://alphafold.ebi.ac.uk/files/msa/AF-Q12F12-F1-msa_v6.a3m	
+Q12GA4	AlphaFoldDB	ok	data/structures/Q12GA4.pdb	AF-Q12GA4-F1	6	95.81	95.81	0.0	0.0		True	286	https://alphafold.ebi.ac.uk/files/msa/AF-Q12GA4-F1-msa_v6.a3m	
+Q14J34	AlphaFoldDB	ok	data/structures/Q14J34.pdb	AF-Q14J34-F1	6	95.44	95.45	0.0	0.004		True	489	https://alphafold.ebi.ac.uk/files/msa/AF-Q14J34-F1-msa_v6.a3m	
+Q1CUX6	AlphaFoldDB	ok	data/structures/Q1CUX6.pdb	AF-Q1CUX6-F1	6	94.62	94.6	0.006	0.018		True	501	https://alphafold.ebi.ac.uk/files/msa/AF-Q1CUX6-F1-msa_v6.a3m	
+Q1H4H6	AlphaFoldDB	ok	data/structures/Q1H4H6.pdb	AF-Q1H4H6-F1	6	95.94	95.96	0.0	0.005	82.81	True	616	https://alphafold.ebi.ac.uk/files/msa/AF-Q1H4H6-F1-msa_v6.a3m	
+Q1I6F8	AlphaFoldDB	ok	data/structures/Q1I6F8.pdb	AF-Q1I6F8-F1	6	96.06	96.05	0.004	0.009		True	224	https://alphafold.ebi.ac.uk/files/msa/AF-Q1I6F8-F1-msa_v6.a3m	
+Q1IKR2	AlphaFoldDB	ok	data/structures/Q1IKR2.pdb	AF-Q1IKR2-F1	6	88.44	88.42	0.079	0.092		True	152	https://alphafold.ebi.ac.uk/files/msa/AF-Q1IKR2-F1-msa_v6.a3m	
+Q1J450	AlphaFoldDB	ok	data/structures/Q1J450.pdb	AF-Q1J450-F1	6	94.88	94.84	0.0	0.007		True	280	https://alphafold.ebi.ac.uk/files/msa/AF-Q1J450-F1-msa_v6.a3m	
+Q1J8E4	AlphaFoldDB	ok	data/structures/Q1J8E4.pdb	AF-Q1J8E4-F1	6	93.31	93.28	0.003	0.017		True	354	https://alphafold.ebi.ac.uk/files/msa/AF-Q1J8E4-F1-msa_v6.a3m	
+Q1JJZ6	AlphaFoldDB	ok	data/structures/Q1JJZ6.pdb	AF-Q1JJZ6-F1	6	97.19	97.17	0.0	0.0		True	171	https://alphafold.ebi.ac.uk/files/msa/AF-Q1JJZ6-F1-msa_v6.a3m	
+Q1RI29	AlphaFoldDB	ok	data/structures/Q1RI29.pdb	AF-Q1RI29-F1	6	93.25	93.23	0.0	0.034		True	353	https://alphafold.ebi.ac.uk/files/msa/AF-Q1RI29-F1-msa_v6.a3m	
+Q21Y60	AlphaFoldDB	ok	data/structures/Q21Y60.pdb	AF-Q21Y60-F1	6	96.69	96.69	0.003	0.009	95.34	True	340	https://alphafold.ebi.ac.uk/files/msa/AF-Q21Y60-F1-msa_v6.a3m	
+Q221U7	AlphaFoldDB	ok	data/structures/Q221U7.pdb	AF-Q221U7-F1	6	97.5	97.48	0.0	0.009	97.94	True	342	https://alphafold.ebi.ac.uk/files/msa/AF-Q221U7-F1-msa_v6.a3m	
+Q27UB1	AlphaFoldDB	ok	data/structures/Q27UB1.pdb	AF-Q27UB1-F1	6	95.06	95.04	0.037	0.043	97.75	True	438	https://alphafold.ebi.ac.uk/files/msa/AF-Q27UB1-F1-msa_v6.a3m	
+Q28VJ6	AlphaFoldDB	ok	data/structures/Q28VJ6.pdb	AF-Q28VJ6-F1	6	96.0	96.02	0.0	0.004		True	275	https://alphafold.ebi.ac.uk/files/msa/AF-Q28VJ6-F1-msa_v6.a3m	
+Q2G8P1	AlphaFoldDB	ok	data/structures/Q2G8P1.pdb	AF-Q2G8P1-F1	6	94.81	94.81	0.0	0.01		True	593	https://alphafold.ebi.ac.uk/files/msa/AF-Q2G8P1-F1-msa_v6.a3m	
+Q2ITQ2	AlphaFoldDB	ok	data/structures/Q2ITQ2.pdb	AF-Q2ITQ2-F1	6	95.06	95.05	0.001	0.02	90.28	True	736	https://alphafold.ebi.ac.uk/files/msa/AF-Q2ITQ2-F1-msa_v6.a3m	
+Q2IUT3	AlphaFoldDB	ok	data/structures/Q2IUT3.pdb	AF-Q2IUT3-F1	6	92.06	92.06	0.057	0.082		True	353	https://alphafold.ebi.ac.uk/files/msa/AF-Q2IUT3-F1-msa_v6.a3m	
+Q2JKV7	AlphaFoldDB	ok	data/structures/Q2JKV7.pdb	AF-Q2JKV7-F1	6	91.94	91.92	0.013	0.028		True	539	https://alphafold.ebi.ac.uk/files/msa/AF-Q2JKV7-F1-msa_v6.a3m	
+Q2NQQ2	AlphaFoldDB	ok	data/structures/Q2NQQ2.pdb	AF-Q2NQQ2-F1	6	95.75	95.76	0.007	0.014	98.25	True	433	https://alphafold.ebi.ac.uk/files/msa/AF-Q2NQQ2-F1-msa_v6.a3m	
+Q2U6U0	AlphaFoldDB	ok	data/structures/Q2U6U0.pdb	AF-Q2U6U0-F1	6	92.44	92.42	0.012	0.037		True	161	https://alphafold.ebi.ac.uk/files/msa/AF-Q2U6U0-F1-msa_v6.a3m	
+Q2Y5G5	AlphaFoldDB	ok	data/structures/Q2Y5G5.pdb	AF-Q2Y5G5-F1	6	91.0	91.02	0.035	0.052		True	347	https://alphafold.ebi.ac.uk/files/msa/AF-Q2Y5G5-F1-msa_v6.a3m	
+Q2YN10	AlphaFoldDB	ok	data/structures/Q2YN10.pdb	AF-Q2YN10-F1	6	95.69	95.71	0.0	0.021		True	192	https://alphafold.ebi.ac.uk/files/msa/AF-Q2YN10-F1-msa_v6.a3m	
+Q31JG7	AlphaFoldDB	ok	data/structures/Q31JG7.pdb	AF-Q31JG7-F1	6	95.75	95.75	0.015	0.028		True	462	https://alphafold.ebi.ac.uk/files/msa/AF-Q31JG7-F1-msa_v6.a3m	
+Q32D53	AlphaFoldDB	ok	data/structures/Q32D53.pdb	AF-Q32D53-F1	6	87.62	87.65	0.022	0.068		True	456	https://alphafold.ebi.ac.uk/files/msa/AF-Q32D53-F1-msa_v6.a3m	
+Q39BZ1	AlphaFoldDB	ok	data/structures/Q39BZ1.pdb	AF-Q39BZ1-F1	6	95.38	95.36	0.003	0.013		True	395	https://alphafold.ebi.ac.uk/files/msa/AF-Q39BZ1-F1-msa_v6.a3m	
+Q39FR0	AlphaFoldDB	ok	data/structures/Q39FR0.pdb	AF-Q39FR0-F1	6	92.62	92.62	0.022	0.047		True	446	https://alphafold.ebi.ac.uk/files/msa/AF-Q39FR0-F1-msa_v6.a3m	
+Q39RP7	AlphaFoldDB	ok	data/structures/Q39RP7.pdb	AF-Q39RP7-F1	6	91.81	91.82	0.003	0.047		True	301	https://alphafold.ebi.ac.uk/files/msa/AF-Q39RP7-F1-msa_v6.a3m	
+Q39YM2	AlphaFoldDB	ok	data/structures/Q39YM2.pdb	AF-Q39YM2-F1	6	92.69	92.71	0.0	0.05		True	358	https://alphafold.ebi.ac.uk/files/msa/AF-Q39YM2-F1-msa_v6.a3m	
+Q3AGU9	AlphaFoldDB	ok	data/structures/Q3AGU9.pdb	AF-Q3AGU9-F1	6	93.25	93.23	0.0	0.02		True	590	https://alphafold.ebi.ac.uk/files/msa/AF-Q3AGU9-F1-msa_v6.a3m	
+Q3ATW8	AlphaFoldDB	ok	data/structures/Q3ATW8.pdb	AF-Q3ATW8-F1	6	97.06	97.07	0.0	0.01		True	103	https://alphafold.ebi.ac.uk/files/msa/AF-Q3ATW8-F1-msa_v6.a3m	
+Q3AWK9	AlphaFoldDB	ok	data/structures/Q3AWK9.pdb	AF-Q3AWK9-F1	6	93.19	93.16	0.004	0.044		True	226	https://alphafold.ebi.ac.uk/files/msa/AF-Q3AWK9-F1-msa_v6.a3m	
+Q3BAK5	AlphaFoldDB	ok	data/structures/Q3BAK5.pdb	AF-Q3BAK5-F1	6	78.12	78.1	0.157	0.231		True	337	https://alphafold.ebi.ac.uk/files/msa/AF-Q3BAK5-F1-msa_v6.a3m	
+Q3IIQ6	AlphaFoldDB	ok	data/structures/Q3IIQ6.pdb	AF-Q3IIQ6-F1	6	94.12	94.1	0.0	0.029	89.84	True	418	https://alphafold.ebi.ac.uk/files/msa/AF-Q3IIQ6-F1-msa_v6.a3m	
+Q3IT46	AlphaFoldDB	ok	data/structures/Q3IT46.pdb	AF-Q3IT46-F1	6	96.38	96.39	0.0	0.02		True	350	https://alphafold.ebi.ac.uk/files/msa/AF-Q3IT46-F1-msa_v6.a3m	
+Q3J8Y6	AlphaFoldDB	ok	data/structures/Q3J8Y6.pdb	AF-Q3J8Y6-F1	6	94.38	94.36	0.0	0.008		True	250	https://alphafold.ebi.ac.uk/files/msa/AF-Q3J8Y6-F1-msa_v6.a3m	
+Q3T1J2	AlphaFoldDB	ok	data/structures/Q3T1J2.pdb	AF-Q3T1J2-F1	6	85.75	85.78	0.129	0.162	95.87	True	519	https://alphafold.ebi.ac.uk/files/msa/AF-Q3T1J2-F1-msa_v6.a3m	
+Q3Z2G8	AlphaFoldDB	ok	data/structures/Q3Z2G8.pdb	AF-Q3Z2G8-F1	6	83.0	83.02	0.099	0.184	97.31	True	293	https://alphafold.ebi.ac.uk/files/msa/AF-Q3Z2G8-F1-msa_v6.a3m	
+Q46ZM0	AlphaFoldDB	ok	data/structures/Q46ZM0.pdb	AF-Q46ZM0-F1	6	90.19	90.17	0.022	0.087		True	369	https://alphafold.ebi.ac.uk/files/msa/AF-Q46ZM0-F1-msa_v6.a3m	
+Q493A5	AlphaFoldDB	ok	data/structures/Q493A5.pdb	AF-Q493A5-F1	6	94.94	94.91	0.005	0.043		True	184	https://alphafold.ebi.ac.uk/files/msa/AF-Q493A5-F1-msa_v6.a3m	
+Q4FQG6	AlphaFoldDB	ok	data/structures/Q4FQG6.pdb	AF-Q4FQG6-F1	6	91.75	91.73	0.003	0.01		True	396	https://alphafold.ebi.ac.uk/files/msa/AF-Q4FQG6-F1-msa_v6.a3m	
+Q4K6U5	AlphaFoldDB	ok	data/structures/Q4K6U5.pdb	AF-Q4K6U5-F1	6	96.94	96.97	0.0	0.007	98.44	True	141	https://alphafold.ebi.ac.uk/files/msa/AF-Q4K6U5-F1-msa_v6.a3m	
+Q4UUW5	AlphaFoldDB	ok	data/structures/Q4UUW5.pdb	AF-Q4UUW5-F1	6	94.38	94.35	0.017	0.059		True	118	https://alphafold.ebi.ac.uk/files/msa/AF-Q4UUW5-F1-msa_v6.a3m	
+Q4UYJ6	AlphaFoldDB	ok	data/structures/Q4UYJ6.pdb	AF-Q4UYJ6-F1	6	84.69	84.69	0.088	0.132		True	363	https://alphafold.ebi.ac.uk/files/msa/AF-Q4UYJ6-F1-msa_v6.a3m	
+Q4WLW6	AlphaFoldDB	ok	data/structures/Q4WLW6.pdb	AF-Q4WLW6-F1	6	91.5	91.5	0.052	0.066		True	497	https://alphafold.ebi.ac.uk/files/msa/AF-Q4WLW6-F1-msa_v6.a3m	
+Q4ZLP9	AlphaFoldDB	ok	data/structures/Q4ZLP9.pdb	AF-Q4ZLP9-F1	6	97.69	97.71	0.0	0.0	98.42	True	212	https://alphafold.ebi.ac.uk/files/msa/AF-Q4ZLP9-F1-msa_v6.a3m	
+Q4ZZI0	AlphaFoldDB	ok	data/structures/Q4ZZI0.pdb	AF-Q4ZZI0-F1	6	94.81	94.83	0.0	0.006		True	336	https://alphafold.ebi.ac.uk/files/msa/AF-Q4ZZI0-F1-msa_v6.a3m	
+Q54NK8	AlphaFoldDB	ok	data/structures/Q54NK8.pdb	AF-Q54NK8-F1	6	83.44	83.44	0.098	0.14		True	285	https://alphafold.ebi.ac.uk/files/msa/AF-Q54NK8-F1-msa_v6.a3m	
+Q5BC23	AlphaFoldDB	ok	data/structures/Q5BC23.pdb	AF-Q5BC23-F1	6	91.31	91.3	0.015	0.063		True	412	https://alphafold.ebi.ac.uk/files/msa/AF-Q5BC23-F1-msa_v6.a3m	
+Q5D8V5	AlphaFoldDB	ok	data/structures/Q5D8V5.pdb	AF-Q5D8V5-F1	6	94.5	94.53	0.012	0.014	89.06	True	433	https://alphafold.ebi.ac.uk/files/msa/AF-Q5D8V5-F1-msa_v6.a3m	
+Q5GXV1	AlphaFoldDB	ok	data/structures/Q5GXV1.pdb	AF-Q5GXV1-F1	6	94.0	93.99	0.013	0.026	94.19	True	308	https://alphafold.ebi.ac.uk/files/msa/AF-Q5GXV1-F1-msa_v6.a3m	
+Q5HNU6	AlphaFoldDB	ok	data/structures/Q5HNU6.pdb	AF-Q5HNU6-F1	6	94.69	94.7	0.0	0.024		True	252	https://alphafold.ebi.ac.uk/files/msa/AF-Q5HNU6-F1-msa_v6.a3m	
+Q5HRI7	AlphaFoldDB	ok	data/structures/Q5HRI7.pdb	AF-Q5HRI7-F1	6	96.25	96.27	0.0	0.0		True	188	https://alphafold.ebi.ac.uk/files/msa/AF-Q5HRI7-F1-msa_v6.a3m	
+Q5LYY7	AlphaFoldDB	ok	data/structures/Q5LYY7.pdb	AF-Q5LYY7-F1	6	96.75	96.76	0.0	0.005	97.69	True	388	https://alphafold.ebi.ac.uk/files/msa/AF-Q5LYY7-F1-msa_v6.a3m	
+Q5PFN3	AlphaFoldDB	ok	data/structures/Q5PFN3.pdb	AF-Q5PFN3-F1	6	90.62	90.65	0.005	0.007		True	432	https://alphafold.ebi.ac.uk/files/msa/AF-Q5PFN3-F1-msa_v6.a3m	
+Q5XIE6	AlphaFoldDB	ok	data/structures/Q5XIE6.pdb	AF-Q5XIE6-F1	6	93.0	93.01	0.018	0.086		True	385	https://alphafold.ebi.ac.uk/files/msa/AF-Q5XIE6-F1-msa_v6.a3m	
+Q5YTI1	AlphaFoldDB	ok	data/structures/Q5YTI1.pdb	AF-Q5YTI1-F1	6	96.44	96.41	0.009	0.018	98.0	True	334	https://alphafold.ebi.ac.uk/files/msa/AF-Q5YTI1-F1-msa_v6.a3m	
+Q62H08	AlphaFoldDB	ok	data/structures/Q62H08.pdb	AF-Q62H08-F1	6	98.31	98.32	0.0	0.0	98.6	True	156	https://alphafold.ebi.ac.uk/files/msa/AF-Q62H08-F1-msa_v6.a3m	
+Q634C4	AlphaFoldDB	ok	data/structures/Q634C4.pdb	AF-Q634C4-F1	6	91.75	91.75	0.024	0.057		True	336	https://alphafold.ebi.ac.uk/files/msa/AF-Q634C4-F1-msa_v6.a3m	
+Q65MR2	AlphaFoldDB	ok	data/structures/Q65MR2.pdb	AF-Q65MR2-F1	6	88.31	88.32	0.006	0.031	95.88	True	667	https://alphafold.ebi.ac.uk/files/msa/AF-Q65MR2-F1-msa_v6.a3m	
+Q65PD0	AlphaFoldDB	ok	data/structures/Q65PD0.pdb	AF-Q65PD0-F1	6	95.19	95.16	0.002	0.012		True	485	https://alphafold.ebi.ac.uk/files/msa/AF-Q65PD0-F1-msa_v6.a3m	
+Q65PH9	AlphaFoldDB	ok	data/structures/Q65PH9.pdb	AF-Q65PH9-F1	6	96.25	96.28	0.003	0.007		True	292	https://alphafold.ebi.ac.uk/files/msa/AF-Q65PH9-F1-msa_v6.a3m	
+Q6A6G1	AlphaFoldDB	ok	data/structures/Q6A6G1.pdb	AF-Q6A6G1-F1	6	91.31	91.3	0.018	0.062		True	433	https://alphafold.ebi.ac.uk/files/msa/AF-Q6A6G1-F1-msa_v6.a3m	
+Q6C662	AlphaFoldDB	ok	data/structures/Q6C662.pdb	AF-Q6C662-F1	6	98.0	98.01	0.0	0.0		True	154	https://alphafold.ebi.ac.uk/files/msa/AF-Q6C662-F1-msa_v6.a3m	
+Q6ERS0	AlphaFoldDB	ok	data/structures/Q6ERS0.pdb	AF-Q6ERS0-F1	6	69.06	69.07	0.287	0.428	84.19	True	404	https://alphafold.ebi.ac.uk/files/msa/AF-Q6ERS0-F1-msa_v6.a3m	
+Q6GDC0	AlphaFoldDB	ok	data/structures/Q6GDC0.pdb	AF-Q6GDC0-F1	6	88.62	88.61	0.012	0.037		True	570	https://alphafold.ebi.ac.uk/files/msa/AF-Q6GDC0-F1-msa_v6.a3m	
+Q6GGZ4	AlphaFoldDB	ok	data/structures/Q6GGZ4.pdb	AF-Q6GGZ4-F1	6	85.69	85.66	0.009	0.082		True	451	https://alphafold.ebi.ac.uk/files/msa/AF-Q6GGZ4-F1-msa_v6.a3m	
+Q6HBX6	AlphaFoldDB	ok	data/structures/Q6HBX6.pdb	AF-Q6HBX6-F1	6	94.12	94.1	0.003	0.027		True	331	https://alphafold.ebi.ac.uk/files/msa/AF-Q6HBX6-F1-msa_v6.a3m	
+Q6LNB8	AlphaFoldDB	ok	data/structures/Q6LNB8.pdb	AF-Q6LNB8-F1	6	97.56	97.58	0.0	0.0		True	284	https://alphafold.ebi.ac.uk/files/msa/AF-Q6LNB8-F1-msa_v6.a3m	
+Q71QI4	AlphaFoldDB	ok	data/structures/Q71QI4.pdb	AF-Q71QI4-F1	6	88.69	88.7	0.073	0.131	92.93	True	260	https://alphafold.ebi.ac.uk/files/msa/AF-Q71QI4-F1-msa_v6.a3m	
+Q759Y5	AlphaFoldDB	ok	data/structures/Q759Y5.pdb	AF-Q759Y5-F1	6	93.69	93.67	0.027	0.041	58.19	True	443	https://alphafold.ebi.ac.uk/files/msa/AF-Q759Y5-F1-msa_v6.a3m	
+Q75A64	AlphaFoldDB	ok	data/structures/Q75A64.pdb	AF-Q75A64-F1	6	86.38	86.39	0.091	0.123		True	527	https://alphafold.ebi.ac.uk/files/msa/AF-Q75A64-F1-msa_v6.a3m	
+Q75PL7	AlphaFoldDB	ok	data/structures/Q75PL7.pdb	AF-Q75PL7-F1	6	92.0	91.98	0.015	0.082		True	330	https://alphafold.ebi.ac.uk/files/msa/AF-Q75PL7-F1-msa_v6.a3m	
+Q7A0I6	AlphaFoldDB	ok	data/structures/Q7A0I6.pdb	AF-Q7A0I6-F1	6	88.31	88.31	0.082	0.152		True	269	https://alphafold.ebi.ac.uk/files/msa/AF-Q7A0I6-F1-msa_v6.a3m	
+Q7MLE6	AlphaFoldDB	ok	data/structures/Q7MLE6.pdb	AF-Q7MLE6-F1	6	94.94	94.94	0.0	0.004		True	254	https://alphafold.ebi.ac.uk/files/msa/AF-Q7MLE6-F1-msa_v6.a3m	
+Q7MYS8	AlphaFoldDB	ok	data/structures/Q7MYS8.pdb	AF-Q7MYS8-F1	6	96.88	96.85	0.0	0.006	98.25	True	181	https://alphafold.ebi.ac.uk/files/msa/AF-Q7MYS8-F1-msa_v6.a3m	
+Q7NJA4	AlphaFoldDB	ok	data/structures/Q7NJA4.pdb	AF-Q7NJA4-F1	6	94.06	94.09	0.002	0.01		True	595	https://alphafold.ebi.ac.uk/files/msa/AF-Q7NJA4-F1-msa_v6.a3m	
+Q7S7L7	AlphaFoldDB	ok	data/structures/Q7S7L7.pdb	AF-Q7S7L7-F1	6	88.5	88.49	0.135	0.146		True	437	https://alphafold.ebi.ac.uk/files/msa/AF-Q7S7L7-F1-msa_v6.a3m	
+Q7W275	AlphaFoldDB	ok	data/structures/Q7W275.pdb	AF-Q7W275-F1	6	94.75	94.73	0.002	0.01		True	596	https://alphafold.ebi.ac.uk/files/msa/AF-Q7W275-F1-msa_v6.a3m	
+Q7WCU0	AlphaFoldDB	ok	data/structures/Q7WCU0.pdb	AF-Q7WCU0-F1	6	89.88	89.9	0.038	0.082		True	158	https://alphafold.ebi.ac.uk/files/msa/AF-Q7WCU0-F1-msa_v6.a3m	
+Q7WKR5	AlphaFoldDB	ok	data/structures/Q7WKR5.pdb	AF-Q7WKR5-F1	6	92.44	92.43	0.011	0.023		True	348	https://alphafold.ebi.ac.uk/files/msa/AF-Q7WKR5-F1-msa_v6.a3m	
+Q86KC1	AlphaFoldDB	ok	data/structures/Q86KC1.pdb	AF-Q86KC1-F1	6	94.88	94.89	0.0	0.08	98.77	True	212	https://alphafold.ebi.ac.uk/files/msa/AF-Q86KC1-F1-msa_v6.a3m	
+Q87M24	AlphaFoldDB	ok	data/structures/Q87M24.pdb	AF-Q87M24-F1	6	96.75	96.72	0.0	0.0		True	406	https://alphafold.ebi.ac.uk/files/msa/AF-Q87M24-F1-msa_v6.a3m	
+Q87VA0	AlphaFoldDB	ok	data/structures/Q87VA0.pdb	AF-Q87VA0-F1	6	90.44	90.44	0.024	0.118		True	170	https://alphafold.ebi.ac.uk/files/msa/AF-Q87VA0-F1-msa_v6.a3m	
+Q8CZD8	AlphaFoldDB	ok	data/structures/Q8CZD8.pdb	AF-Q8CZD8-F1	6	95.62	95.65	0.0	0.016		True	579	https://alphafold.ebi.ac.uk/files/msa/AF-Q8CZD8-F1-msa_v6.a3m	
+Q8D3J3	AlphaFoldDB	ok	data/structures/Q8D3J3.pdb	AF-Q8D3J3-F1	6	90.75	90.76	0.0	0.013		True	462	https://alphafold.ebi.ac.uk/files/msa/AF-Q8D3J3-F1-msa_v6.a3m	
+Q8E0H0	AlphaFoldDB	ok	data/structures/Q8E0H0.pdb	AF-Q8E0H0-F1	6	97.0	96.97	0.004	0.016	98.19	True	252	https://alphafold.ebi.ac.uk/files/msa/AF-Q8E0H0-F1-msa_v6.a3m	
+Q8E6F5	AlphaFoldDB	ok	data/structures/Q8E6F5.pdb	AF-Q8E6F5-F1	6	96.94	96.96	0.0	0.0	95.62	True	451	https://alphafold.ebi.ac.uk/files/msa/AF-Q8E6F5-F1-msa_v6.a3m	
+Q8ENX2	AlphaFoldDB	ok	data/structures/Q8ENX2.pdb	AF-Q8ENX2-F1	6	95.5	95.48	0.0	0.0	84.75	True	286	https://alphafold.ebi.ac.uk/files/msa/AF-Q8ENX2-F1-msa_v6.a3m	
+Q8FIS3	AlphaFoldDB	ok	data/structures/Q8FIS3.pdb	AF-Q8FIS3-F1	6	87.94	87.92	0.011	0.079		True	847	https://alphafold.ebi.ac.uk/files/msa/AF-Q8FIS3-F1-msa_v6.a3m	
+Q8FL03	AlphaFoldDB	ok	data/structures/Q8FL03.pdb	AF-Q8FL03-F1	6	95.5	95.52	0.006	0.028		True	319	https://alphafold.ebi.ac.uk/files/msa/AF-Q8FL03-F1-msa_v6.a3m	
+Q8I4V8	AlphaFoldDB	ok	data/structures/Q8I4V8.pdb	AF-Q8I4V8-F1	6	93.12	93.14	0.026	0.066		True	304	https://alphafold.ebi.ac.uk/files/msa/AF-Q8I4V8-F1-msa_v6.a3m	
+Q8LQJ9	AlphaFoldDB	ok	data/structures/Q8LQJ9.pdb	AF-Q8LQJ9-F1	6	77.88	77.89	0.155	0.264	96.25	True	709	https://alphafold.ebi.ac.uk/files/msa/AF-Q8LQJ9-F1-msa_v6.a3m	
+Q8RFY9	AlphaFoldDB	ok	data/structures/Q8RFY9.pdb	AF-Q8RFY9-F1	6	96.81	96.8	0.0	0.0		True	194	https://alphafold.ebi.ac.uk/files/msa/AF-Q8RFY9-F1-msa_v6.a3m	
+Q8SEW8	AlphaFoldDB	ok	data/structures/Q8SEW8.pdb	AF-Q8SEW8-F1	6	97.81	97.79	0.0	0.004		True	261	https://alphafold.ebi.ac.uk/files/msa/AF-Q8SEW8-F1-msa_v6.a3m	
+Q8Z6R2	AlphaFoldDB	ok	data/structures/Q8Z6R2.pdb	AF-Q8Z6R2-F1	6	98.5	98.53	0.0	0.0	98.62	True	333	https://alphafold.ebi.ac.uk/files/msa/AF-Q8Z6R2-F1-msa_v6.a3m	
+Q8Z9H0	AlphaFoldDB	ok	data/structures/Q8Z9H0.pdb	AF-Q8Z9H0-F1	6	95.88	95.91	0.0	0.0		True	438	https://alphafold.ebi.ac.uk/files/msa/AF-Q8Z9H0-F1-msa_v6.a3m	
+Q928B5	AlphaFoldDB	ok	data/structures/Q928B5.pdb	AF-Q928B5-F1	6	95.69	95.69	0.009	0.013		True	319	https://alphafold.ebi.ac.uk/files/msa/AF-Q928B5-F1-msa_v6.a3m	
+Q92RJ1	AlphaFoldDB	ok	data/structures/Q92RJ1.pdb	AF-Q92RJ1-F1	6	90.62	90.63	0.053	0.105		True	645	https://alphafold.ebi.ac.uk/files/msa/AF-Q92RJ1-F1-msa_v6.a3m	
+Q93A44	AlphaFoldDB	ok	data/structures/Q93A44.pdb	AF-Q93A44-F1	6	93.0	93.01	0.009	0.021	91.0	True	702	https://alphafold.ebi.ac.uk/files/msa/AF-Q93A44-F1-msa_v6.a3m	
+Q96GJ1	AlphaFoldDB	ok	data/structures/Q96GJ1.pdb	AF-Q96GJ1-F1	6	82.56	82.58	0.169	0.183	89.94	True	504	https://alphafold.ebi.ac.uk/files/msa/AF-Q96GJ1-F1-msa_v6.a3m	
+Q97K95	AlphaFoldDB	ok	data/structures/Q97K95.pdb	AF-Q97K95-F1	6	95.88	95.9	0.0	0.005	89.25	True	434	https://alphafold.ebi.ac.uk/files/msa/AF-Q97K95-F1-msa_v6.a3m	
+Q985P4	AlphaFoldDB	ok	data/structures/Q985P4.pdb	AF-Q985P4-F1	6	95.69	95.67	0.011	0.02	96.47	True	737	https://alphafold.ebi.ac.uk/files/msa/AF-Q985P4-F1-msa_v6.a3m	
+Q988B8	AlphaFoldDB	ok	data/structures/Q988B8.pdb	AF-Q988B8-F1	6	97.25	97.27	0.0	0.003		True	393	https://alphafold.ebi.ac.uk/files/msa/AF-Q988B8-F1-msa_v6.a3m	
+Q98KA5	AlphaFoldDB	ok	data/structures/Q98KA5.pdb	AF-Q98KA5-F1	6	89.94	89.92	0.074	0.107		True	338	https://alphafold.ebi.ac.uk/files/msa/AF-Q98KA5-F1-msa_v6.a3m	
+Q99V09	AlphaFoldDB	ok	data/structures/Q99V09.pdb	AF-Q99V09-F1	6	92.88	92.89	0.014	0.027		True	565	https://alphafold.ebi.ac.uk/files/msa/AF-Q99V09-F1-msa_v6.a3m	
+Q9AFC7	AlphaFoldDB	ok	data/structures/Q9AFC7.pdb	AF-Q9AFC7-F1	6	95.88	95.88	0.01	0.017		True	408	https://alphafold.ebi.ac.uk/files/msa/AF-Q9AFC7-F1-msa_v6.a3m	
+Q9AKQ3	AlphaFoldDB	ok	data/structures/Q9AKQ3.pdb	AF-Q9AKQ3-F1	6	97.44	97.45	0.0	0.0	98.66	True	294	https://alphafold.ebi.ac.uk/files/msa/AF-Q9AKQ3-F1-msa_v6.a3m	
+Q9CIV8	AlphaFoldDB	ok	data/structures/Q9CIV8.pdb	AF-Q9CIV8-F1	6	96.5	96.49	0.006	0.009	96.41	True	332	https://alphafold.ebi.ac.uk/files/msa/AF-Q9CIV8-F1-msa_v6.a3m	
+Q9CQU8	AlphaFoldDB	ok	data/structures/Q9CQU8.pdb	AF-Q9CQU8-F1	6	88.0	88.03	0.006	0.09	94.78	True	166	https://alphafold.ebi.ac.uk/files/msa/AF-Q9CQU8-F1-msa_v6.a3m	
+Q9HQU4	AlphaFoldDB	ok	data/structures/Q9HQU4.pdb	AF-Q9HQU4-F1	6	92.06	92.09	0.01	0.052	83.5	True	499	https://alphafold.ebi.ac.uk/files/msa/AF-Q9HQU4-F1-msa_v6.a3m	
+Q9HX95	AlphaFoldDB	ok	data/structures/Q9HX95.pdb	AF-Q9HX95-F1	6	93.56	93.56	0.025	0.044	98.0	True	160	https://alphafold.ebi.ac.uk/files/msa/AF-Q9HX95-F1-msa_v6.a3m	
+Q9I7C0	AlphaFoldDB	ok	data/structures/Q9I7C0.pdb	AF-Q9I7C0-F1	6	97.0	97.01	0.006	0.011	98.53	True	178	https://alphafold.ebi.ac.uk/files/msa/AF-Q9I7C0-F1-msa_v6.a3m	
+Q9KAD7	AlphaFoldDB	ok	data/structures/Q9KAD7.pdb	AF-Q9KAD7-F1	6	98.0	97.99	0.002	0.003	98.94	True	666	https://alphafold.ebi.ac.uk/files/msa/AF-Q9KAD7-F1-msa_v6.a3m	
+Q9LZX6	AlphaFoldDB	ok	data/structures/Q9LZX6.pdb	AF-Q9LZX6-F1	6	89.12	89.1	0.151	0.156	98.91	True	365	https://alphafold.ebi.ac.uk/files/msa/AF-Q9LZX6-F1-msa_v6.a3m	
+Q9NH48	AlphaFoldDB	ok	data/structures/Q9NH48.pdb	AF-Q9NH48-F1	6	96.25	96.26	0.0	0.02		True	357	https://alphafold.ebi.ac.uk/files/msa/AF-Q9NH48-F1-msa_v6.a3m	
+Q9PBC0	AlphaFoldDB	ok	data/structures/Q9PBC0.pdb	AF-Q9PBC0-F1	6	94.12	94.15	0.05	0.053		True	322	https://alphafold.ebi.ac.uk/files/msa/AF-Q9PBC0-F1-msa_v6.a3m	
+Q9PCG4	AlphaFoldDB	ok	data/structures/Q9PCG4.pdb	AF-Q9PCG4-F1	6	96.44	96.46	0.0	0.022	98.65	True	324	https://alphafold.ebi.ac.uk/files/msa/AF-Q9PCG4-F1-msa_v6.a3m	
+Q9S2F4	AlphaFoldDB	ok	data/structures/Q9S2F4.pdb	AF-Q9S2F4-F1	6	92.44	92.43	0.034	0.042		True	381	https://alphafold.ebi.ac.uk/files/msa/AF-Q9S2F4-F1-msa_v6.a3m	
+Q9XG81	AlphaFoldDB	ok	data/structures/Q9XG81.pdb	AF-Q9XG81-F1	6	88.25	88.28	0.033	0.157	98.81	True	153	https://alphafold.ebi.ac.uk/files/msa/AF-Q9XG81-F1-msa_v6.a3m	
+Q9YBK2	AlphaFoldDB	ok	data/structures/Q9YBK2.pdb	AF-Q9YBK2-F1	6	96.75	96.75	0.0	0.002		True	406	https://alphafold.ebi.ac.uk/files/msa/AF-Q9YBK2-F1-msa_v6.a3m	
+S0E2Y4	AlphaFoldDB	ok	data/structures/S0E2Y4.pdb	AF-S0E2Y4-F1	6	88.94	88.91	0.076	0.12		True	342	https://alphafold.ebi.ac.uk/files/msa/AF-S0E2Y4-F1-msa_v6.a3m	
+W8CV45	AlphaFoldDB	ok	data/structures/W8CV45.pdb	AF-W8CV45-F1	6	94.94	94.93	0.0	0.011	98.19	True	353	https://alphafold.ebi.ac.uk/files/msa/AF-W8CV45-F1-msa_v6.a3m	

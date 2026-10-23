@@ -1,0 +1,10 @@
+# Environment
+.venv/
+__pycache__/
+.DS_Store
+
+# Large or regenerable outputs (rebuild with scripts/)
+data/structures/
+results/folddisco/index*
+results/folddisco/input/
+results/**/tmp*/

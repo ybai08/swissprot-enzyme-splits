@@ -1,0 +1,12 @@
+{
+  "n_enzymes": 300,
+  "status_counts": {
+    "ok": 298,
+    "no_model": 2
+  },
+  "plddt_mean_median": 94.13,
+  "n_plddt_mean_lt70": 1,
+  "n_with_act_site_plddt": 100,
+  "n_act_site_plddt_lt70": 3,
+  "structures_mb": 72.4
+}

@@ -1,0 +1,3 @@
+preset	n_proteins	n_clusters	n_singletons	largest_cluster	mean_cluster_size	n_clusters_joining_seq30	n_proteins_in_those
+fold_e3_c80	298	216	169	8	1.38	30	91
+fold_tm50_c50	298	200	152	15	1.49	32	110

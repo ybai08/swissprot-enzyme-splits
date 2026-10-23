@@ -1,0 +1,4 @@
+threshold	coverage	cov_mode	n_proteins	n_clusters	n_singletons	largest_cluster	mean_cluster_size	frac_in_largest
+seq30	0.8	0	300	266	237	4	1.13	0.013
+seq50	0.8	0	300	282	266	4	1.06	0.013
+seq90	0.8	0	300	300	300	1	1.0	0.003

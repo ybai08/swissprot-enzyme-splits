@@ -1,0 +1,30 @@
+{
+  "query": "(reviewed:true) AND (ec:*) AND (fragment:false) AND (length:[50 TO 1000])",
+  "uniprot_release": "2026_03",
+  "uniprot_release_date": "02-September-2026",
+  "fetched_at": "2026-10-23T18:53:08+00:00",
+  "args": {
+    "n": "300",
+    "seed": "0",
+    "min_length": "50",
+    "max_length": "1000",
+    "require_act_site": "False",
+    "keep_fragments": "False",
+    "out": "/Users/yangbai/Desktop/swissprot-enzyme-splits/data"
+  },
+  "n_matching": 266683,
+  "n_sampled": 300,
+  "n_with_act_site": 100,
+  "n_with_experimental_act_site": 3,
+  "n_multi_ec": 17,
+  "n_with_pdb": 19,
+  "ec_class_counts": {
+    "1": 41,
+    "2": 94,
+    "3": 60,
+    "4": 28,
+    "5": 24,
+    "6": 32,
+    "7": 21
+  }
+}

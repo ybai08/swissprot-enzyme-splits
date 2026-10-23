@@ -1,0 +1,59 @@
+Mini Exercise | Building a Swiss-Prot Enzyme Dataset
+Sequence clusters → structure clusters → active-site motifs → leakage-aware ML splits
+Goal  Build a dataset of reviewed Swiss-Prot enzymes for a machine-learning model related to enzyme active sites. Decide how to create train/validation/test sets that evaluate meaningful generalization—not just memorization of similar proteins.
+Format  Beginner-friendly research exercise • Suggested starting point: 100–500 enzymes • Work in Python + command line • Open-ended methodology
+What you should learn
+What sequence, global structure, and local catalytic-site similarity each reveal—and what each misses.
+How to retrieve reviewed enzyme sequences, active-site metadata, predicted structures, and optional multiple sequence alignments (MSAs).
+How to compare different splitting strategies and explain the kind of generalization each tests.
+Before starting: compute and storage
+Start small. A full Swiss-Prot-scale structure collection plus Foldseek/Folddisco indexes, temporary files, and MSAs can require substantial disk space. Check available capacity (df -h; du -sh structures/). Use Google Colab with Drive storage, or a workstation/server with sufficient persistent storage. Colab’s temporary disk can be erased when a session ends; mount Drive or copy results out. Avoid downloading all structures or installing a huge local MSA database for this exercise. Fetch only selected proteins, and cache downloads.
+1 | Collect reviewed enzyme records from Swiss-Prot
+Swiss-Prot is the manually reviewed part of UniProtKB. Begin with records marked reviewed and carrying an enzyme commission (EC) number. An EC number is a useful starting filter, but it does not guarantee annotated catalytic residues. UniProt annotations such as ACT_SITE, BINDING and SITE have different meanings: do not assume every binding residue is catalytic.
+# Python: fetch a small FASTA sample with UniProt REST API import requests url = 'https://rest.uniprot.org/uniprotkb/search' params = {'query': '(reviewed:true) AND (ec:*)',           'format': 'fasta', 'size': 200} r = requests.get(url, params=params, timeout=120); r.raise_for_status() open('enzymes.fasta', 'w').write(r.text)
+For richer metadata, query UniProtKB in JSON or TSV through the same API. Record accession, reviewed status, sequence, EC number, enzyme name, taxonomy, and available active-site feature positions. Decide whether to require ACT_SITE annotations, use a curated source of catalytic residues, or work with an unlabeled set for initial clustering. Keep track of missing labels and of sequences with multiple EC annotations.
+Investigate: How would you make your query reproducible, deal with pagination for a larger collection, remove fragments, and select a reasonable subset? The first task is to verify every included accession really belongs to reviewed Swiss-Prot.
+2 | Explore sequence similarity with MMseqs2
+MMseqs2 groups similar amino-acid sequences. It takes FASTA as input; easy-cluster produces a cluster-membership TSV and representative sequences. Sequence identity is a useful safeguard against near-duplicate proteins appearing in separate splits.
+mmseqs easy-cluster enzymes.fasta seq50 tmp_seq \   --min-seq-id 0.5 -c 0.8 --cov-mode 1
+Try changing --min-seq-id (e.g., 0.3, 0.5, 0.9) and coverage -c. Inspect seq50_cluster.tsv and count clusters and singleton proteins. Thresholds are examples, not necessarily suitable final split criteria.
+Question: What changes when you cluster at 90% identity versus 30–50% identity? Why is random splitting of individual proteins often misleading?
+3 | Retrieve structures and optional MSAs
+Structures: for each chosen UniProt accession, check the AlphaFold Protein Structure Database prediction API and download a returned PDB or mmCIF URL. For experimentally determined structures, investigate UniProt cross-references to PDB/RCSB. Some proteins will have no usable model; predicted structures can have uncertain loops, side-chain positions, domain orientations, and active sites. Record the source and confidence where available.
+# Python: retrieve one model, using URLs provided by the API import requests acc = 'P69905'  # example accession; replace with your enzyme resp = requests.get(f'https://alphafold.ebi.ac.uk/api/prediction/{acc}',                     timeout=30) if resp.ok and resp.json():     item = resp.json()[0]     pdb_url = item.get('pdbUrl')     if pdb_url:         pdb = requests.get(pdb_url, timeout=120); pdb.raise_for_status()         open(f'{acc}.pdb', 'wb').write(pdb.content)
+This example is only a download pattern: replace the accession with a selected enzyme, check whether a model exists, and use stable filenames that map to UniProt IDs. Organize valid monomer structure files in structures/. Do not assume PDB residue numbering equals UniProt numbering; check offsets, missing residues, insertions, and chains before locating active sites.
+MSAs: an MSA contains homologous sequences aligned to a query enzyme. For a few test sequences, ColabFold can use its MMseqs2-based public server to generate A3M files without downloading the entire sequence database:
+colabfold_batch small_enzymes.fasta msa_output --msa-only
+Use the public service responsibly (small batches, no massive scraping). Large-scale local MSA generation requires significant databases/RAM and is not necessary for completing the splitting exercise. Ask: Are MSAs necessary for your target ML model, or just interesting auxiliary features? Keep homologs fetched for MSAs distinct from the Swiss-Prot-labeled examples in your dataset.
+4 | Compare whole-protein structural similarity with Foldseek
+Foldseek compares three-dimensional structures and can cluster proteins with similar folds even where sequences have diverged. Try a subset with downloaded PDB/mmCIF structures:
+foldseek easy-cluster structures/ struct_clusters tmp_struct -c 0.8
+Inspect struct_clusters_clu.tsv (naming may vary by version). Explore the effect of coverage, alignment settings, and confidence filtering. Structural similarity and sequence similarity are not interchangeable: similar folds may serve different reactions, while catalytic motifs can recur in different folds.
+Question: Which sequence clusters merge into the same structure cluster? Which stay separate? Why might global-fold similarity still fail to control active-site leakage?
+5 | Search local active-site geometry with Folddisco
+Folddisco indexes structures and finds spatially similar discontinuous motifs: residues that come together in 3D even if far apart in sequence. Its main primitive is motif search, not a one-command unsupervised active-site clustering algorithm.
+folddisco index -p structures/ -i active_index -t 4 # Example from Folddisco documentation: catalytic triad on a known structure folddisco query -i active_index -p query/4CHA.pdb \   -q B57,B102,C195 -t 4
+Replace the example with a known catalytic motif from an enzyme in your dataset. Confirm the chain identifiers, residue numbers, residue chemistry, and local geometry before querying. Compare returned hits and test thresholds such as geometry/RMSD. Try to distinguish related catalytic motifs from coincidental local matches.
+Open-ended challenge: How could you transform many query→hit relationships into active-site groups? You might build a graph of matched proteins, apply thresholds and connected components, or use another grouping method. Explain how you avoid overly broad transitive connections. Not every enzyme has a known multi-residue active site.
+6 | Design and audit train / validation / test splits
+Your central problem: split by proteins—or by groups of similar proteins? Design and compare at least two of the following strategies. Assign entire relevant clusters/groups to a single split to prevent leakage.
+Random protein split (baseline): shows why naive accuracy may be optimistic.
+Sequence-aware split: place sequence-similar proteins in the same split using MMseqs2.
+Structure-aware split: prevent closely similar global folds from crossing splits using Foldseek.
+Motif-aware split: try to keep comparable catalytic-site motifs from appearing on both sides using Folddisco-derived groups.
+Consider intersecting or connecting constraints across all three similarity types. If protein A shares a sequence cluster with B, and B shares a motif group with C, how should the split assignment handle A, B, and C? Decide whether you are testing new sequences, new folds, new catalytic geometries, or combinations. Be explicit if a grouping strategy leaves too little diversity or yields imbalanced splits.
+Suggested split proportions: 80% train, 10% validation, 10% test by protein count where feasible; report actual counts. Recheck cross-split sequence identities, structural matches, and catalytic-motif hits after splitting. Also compare enzyme EC labels, lengths, taxonomy, and annotated-site availability across splits.
+Deliverables (keep it short)
+A CSV/Parquet manifest (one row per selected enzyme): UniProt accession, sequence or FASTA path, reviewed/EC evidence, active-site positions/status, structure path/source, MSA path if available, and split assignment.
+Cluster/group files from MMseqs2, Foldseek, and your Folddisco-based motif grouping (or an explanation of why a stage is incomplete).
+A brief table comparing candidate splits: protein and group counts; sequence/structure/motif overlap across splits; class balance and missing annotations.
+A short explanation: which split would you choose for training an active-site ML model, what generalization does it measure, and what leakage or annotation limitations remain?
+Useful links & reading
+UniProt REST API: https://www.uniprot.org/help/api_queries
+UniProtKB: https://www.uniprot.org/uniprotkb
+MMseqs2: https://github.com/soedinglab/MMseqs2
+Foldseek: https://github.com/steineggerlab/foldseek
+Folddisco: https://github.com/steineggerlab/folddisco
+AlphaFold DB API: https://alphafold.ebi.ac.uk/api-docs
+ColabFold: https://github.com/sokrypton/ColabFold
+M-CSA curated catalytic sites (optional): https://www.ebi.ac.uk/thornton-srv/m-csa/
